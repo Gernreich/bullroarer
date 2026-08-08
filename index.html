@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullroarer — five blade profiles</title>
+<style>
+:root{--bg:#fbfbfa;--fg:#1a1c1e;--mut:#5b6067;--line:#e2e4e7;--card:#fff;--accent:#1d4ed8;
+--codebg:#f4f5f7;--thbg:#f0f1f3;--mark:#fff8c4}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e6e8ea;--mut:#9aa1a9;--line:#2b2f34;
+--card:#1b1e22;--accent:#7aa2f7;--codebg:#22262b;--thbg:#23272c;--mark:#4a411c}}
+:root[data-theme=dark]{--bg:#15171a;--fg:#e6e8ea;--mut:#9aa1a9;--line:#2b2f34;--card:#1b1e22;
+--accent:#7aa2f7;--codebg:#22262b;--thbg:#23272c;--mark:#4a411c}
+:root[data-theme=light]{--bg:#fbfbfa;--fg:#1a1c1e;--mut:#5b6067;--line:#e2e4e7;--card:#fff;
+--accent:#1d4ed8;--codebg:#f4f5f7;--thbg:#f0f1f3;--mark:#fff8c4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.62 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+-webkit-text-size-adjust:100%}
+.wrap{display:grid;grid-template-columns:250px minmax(0,1fr);gap:44px;max-width:1180px;
+margin:0 auto;padding:40px 28px 96px}
+nav{position:sticky;top:28px;align-self:start;max-height:calc(100vh - 56px);overflow:auto;
+border-right:1px solid var(--line);padding-right:16px;font-size:13.5px;line-height:1.45}
+nav b{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);
+margin:0 0 12px}
+nav a{display:block;color:var(--mut);text-decoration:none;padding:3px 0;border-radius:4px}
+nav a:hover{color:var(--accent)}
+nav a.l1{color:var(--fg);font-weight:640;margin-top:11px}
+nav a.l2{padding-left:12px}
+main{min-width:0}
+h1{font-size:1.62rem;line-height:1.25;letter-spacing:-.015em;margin:2.4em 0 .5em;
+padding-bottom:.32em;border-bottom:2px solid var(--line)}
+main>h1:first-child{margin-top:0;border-bottom:none;font-size:1.95rem}
+h2{font-size:1.16rem;margin:2em 0 .5em;letter-spacing:-.01em}
+h3{font-size:1.02rem;font-weight:650;margin:1.7em 0 .45em}
+p{margin:.85em 0}
+ul,ol{margin:.85em 0;padding-left:1.35em}
+li{margin:.3em 0}
+hr{border:0;border-top:1px solid var(--line);margin:2.6em 0}
+figure{margin:1.6em 0}
+figure svg,figure img{display:block;width:100%;max-width:100%;height:auto;
+border:1px solid var(--line);border-radius:10px}
+a{color:var(--accent)}
+code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+background:var(--codebg);padding:.1em .32em;border-radius:4px;
+border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+pre{background:var(--codebg);border:1px solid var(--line);border-radius:9px;
+padding:14px 16px;overflow-x:auto;margin:1.1em 0}
+pre code{background:none;border:0;padding:0;font-size:12.8px;line-height:1.62;white-space:pre}
+blockquote{margin:1.15em 0;padding:.7em 1.1em;border-left:4px solid var(--accent);
+background:var(--codebg);border-radius:0 7px 7px 0}
+blockquote p{margin:0}
+.tw{overflow-x:auto;margin:1.15em 0;border:1px solid var(--line);border-radius:9px;
+background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+/* honour align="center" on gallery cells: a presentation attribute loses to any
+   CSS rule, so the line above would silently left-align every thumbnail caption */
+td[align=center],th[align=center]{text-align:center}
+th{background:var(--thbg);font-weight:630;white-space:nowrap;font-size:13px;
+letter-spacing:.01em}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:color-mix(in srgb,var(--thbg) 45%,transparent)}
+td code,th code{white-space:nowrap}
+.tog{position:fixed;top:14px;right:14px;z-index:9;background:var(--card);color:var(--mut);
+border:1px solid var(--line);border-radius:7px;padding:6px 11px;font-size:12.5px;cursor:pointer}
+.tog:hover{color:var(--accent)}
+@media (max-width:900px){.wrap{grid-template-columns:1fr;gap:20px;padding:26px 18px 72px}
+nav{position:static;max-height:none;border-right:0;border-bottom:1px solid var(--line);
+padding:0 0 16px;columns:2;column-gap:20px}}
+@media print{nav,.tog{display:none}.wrap{display:block;max-width:none;padding:0}
+pre,.tw{break-inside:avoid}h1{break-after:avoid}}
+</style>
+</head>
+<body>
+<button class="tog" type="button">theme</button>
+<div class="wrap">
+<nav><b>Contents</b><a class="l1" href="#bullroarer--five-blade-profiles">Bullroarer — five blade profiles</a><a class="l2" href="#get-the-files">Get the files</a><a class="l2" href="#the-five-profiles">The five profiles</a><a class="l2" href="#what-the-files-contain">What the files contain</a><a class="l2" href="#before-you-cut">Before you cut</a><a class="l2" href="#files">Files</a></nav>
+<main>
+<h1 id="bullroarer--five-blade-profiles">Bullroarer — five blade profiles</h1>
+<p>A bullroarer is a flat blade on a cord. Whirled overhead, it spins about its own long axis while it circles, and the alternating faces chop the air into a pulsing roar. The pitch follows how fast you swing it; the shape of the blade decides how readily it spins and how much of the sound is roar rather than whistle.</p>
+<p>Five profiles, all cut-ready. They differ only in outline — every one is a single closed cut with one 7mm cord hole.</p>
+<h2 id="get-the-files">Get the files</h2>
+<ul><li><strong><a href="https://github.com/Gernreich/bullroarer/archive/refs/heads/main.zip">Everything as a ZIP</a></strong> — all five profiles.</li><li><strong><a href="https://github.com/Gernreich/bullroarer">Repository</a></strong> — if you want to change a profile or read the geometry.</li><li>Or click any picture below to download that one cut file.</li></ul>
+<p>Released under CC0 1.0 — do what you like with them, no attribution needed. Built for <strong><a href="https://www.youtube.com/@LaserMadeMusic">LaserMadeMusic</a></strong>.</p>
+<h2 id="the-five-profiles">The five profiles</h2>
+<p>Click any of these to download the cut file. The pictures are display renderings — the cut files draw a hairline on no background at all, which a browser shows almost invisibly, so these are thickened and painted onto a light ground and cropped to the part. <strong>Each is shown at its own scale</strong>, so the sizes below are the ones that matter, not how large the picture looks.</p>
+<div class="tw">
+<table>
+<tr>
+<td align="center"><a href="BullroarerRectangular.svg"><img src="previews/BullroarerRectangular.svg" alt="A plain rectangular bullroarer blade, 200 by 42mm, with a single cord hole near one end" width="150"></a></td>
+<td align="center"><a href="BullroarerConvexNarrowTapered.svg"><img src="previews/BullroarerConvexNarrowTapered.svg" alt="A long narrow bullroarer blade tapering to a point, 204 by 33mm, with a cord hole at the blunt end" width="150"></a></td>
+<td align="center"><a href="BullroarerConvexTapered.svg"><img src="previews/BullroarerConvexTapered.svg" alt="A broad teardrop bullroarer blade, 151 by 89mm, rounded at the cord end and tapering to a point" width="150"></a></td>
+</tr>
+<tr>
+<td align="center"><sub>Rectangular · 200 × 42mm</sub></td>
+<td align="center"><sub>Convex narrow tapered · 204 × 33mm</sub></td>
+<td align="center"><sub>Convex tapered · 151 × 89mm</sub></td>
+</tr>
+<tr>
+<td align="center"><a href="BullroarerConcaveTapered.svg"><img src="previews/BullroarerConcaveTapered.svg" alt="A bullroarer blade with concave swept edges drawing to a long point, 200 by 95mm" width="150"></a></td>
+<td align="center"><a href="BullroarerSawtooth.svg"><img src="previews/BullroarerSawtooth.svg" alt="A bullroarer blade with sawtooth teeth along both long edges, 169 by 68mm" width="150"></a></td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><sub>Concave tapered · 200 × 95mm</sub></td>
+<td align="center"><sub>Sawtooth · 169 × 68mm</sub></td>
+<td></td>
+</tr>
+</table>
+</div>
+<h2 id="what-the-files-contain">What the files contain</h2>
+<p>Measured out of the files themselves, not copied from whatever drew them:</p>
+<div class='tw'><table><thead><tr><th>Profile</th><th>Blade</th><th>Cord hole</th><th>Hole centre</th></tr></thead><tbody><tr><td><code>BullroarerRectangular.svg</code></td><td>200.0 × 42.1mm</td><td>7mm</td><td>11mm from the near end</td></tr><tr><td><code>BullroarerConvexNarrowTapered.svg</code></td><td>204.3 × 32.9mm</td><td>7mm</td><td>8mm from the blunt end</td></tr><tr><td><code>BullroarerConvexTapered.svg</code></td><td>150.5 × 89.3mm</td><td>7mm</td><td>8mm from the round end</td></tr><tr><td><code>BullroarerConcaveTapered.svg</code></td><td>200.3 × 94.6mm</td><td>7mm</td><td>8mm from the round end</td></tr><tr><td><code>BullroarerSawtooth.svg</code></td><td>169.2 × 67.6mm</td><td>7mm</td><td>9mm from the near end</td></tr></tbody></table></div>
+<p><strong>Every cord hole sits on the blade's long centreline.</strong> That is not decoration: a hole off the centreline makes the blade spin unevenly and the roar stutters.</p>
+<p>Each file is one sheet, 495 × 279mm, with the blade positioned on it. Output is millimetre-true — <code>1 user unit = 1 mm</code> with a physical <code>width</code>/<code>height</code> — so it prints and cuts at real size. Every line is a cut; there is no engrave layer and nothing to map by colour.</p>
+<h2 id="before-you-cut">Before you cut</h2>
+<p><strong>Material and thickness are yours to choose, and they matter more than the profile.</strong> Nothing here has been validated against cut stock. A bullroarer has to survive being whirled hard on a cord, and the blade is the part that fails — thin ply can delaminate and a knot can split out through the cord hole. Consider the grain direction: it should run along the blade, not across it.</p>
+<p><strong>The cord is not in these files.</strong> Neither is any advice on it, because the right cord is a function of your blade's mass and how hard you intend to swing. A swivel between cord and blade is worth considering: without one the cord twists up as the blade spins.</p>
+<p><strong>This is not a toy and it needs space.</strong> A bullroarer on a long cord sweeps a circle several metres across at head height, and it is loud on purpose.</p>
+<h2 id="files">Files</h2>
+<div class='tw'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><code>Bullroarer*.svg</code></td><td>the five cut-ready profiles</td></tr><tr><td><code>previews/</code></td><td>display renderings — <strong>not</strong> cut files</td></tr><tr><td><code>index.md</code> · <code>index.html</code></td><td>this page; the markdown is the source</td></tr></tbody></table></div>
+</main>
+</div>
+<script>
+var r=document.documentElement,b=document.querySelector('.tog');
+function set(t){r.setAttribute('data-theme',t);try{localStorage.setItem('ctg-theme',t)}catch(e){}
+b.textContent=t==='dark'?'\u2600 light':'\u263e dark';}
+var saved=null;try{saved=localStorage.getItem('ctg-theme')}catch(e){}
+set(saved||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+b.addEventListener('click',function(){set(r.getAttribute('data-theme')==='dark'?'light':'dark')});
+</script>
+</body>
+</html>

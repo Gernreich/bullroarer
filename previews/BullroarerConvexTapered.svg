@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="165.58mm"
+   height="104.38mm"
+   viewBox="93.41 95.07 165.58 104.38"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+<!-- DISPLAY ONLY - not a cut file. Presentational changes only: the stroke is
+     thickened and the hairline hint removed, a light ground is painted in, and the view is
+     cropped to the part rather than the whole sheet. Geometry is untouched, and the cut
+     file keeps the sheet position your laser expects, plus its own hairline stroke.
+     Cut the file in the repository root, not this one. -->
+  <rect x="93.41" y="95.07" width="165.58" height="104.38" fill="#faf7f0"/>
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.35;"
+       d="m 100.93575,147.25559 c 98.26949,-59.772378 153.91216,-59.324678 150.36662,0"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.35;"
+       d="m 100.93575,147.25559 c 98.26949,59.77238 153.91216,59.32468 150.36662,0"
+       id="path1-5" />
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:1.35;"
+       id="path2"
+       cx="244.13591"
+       cy="147.25558"
+       r="3.5" />
+  </g>
+</svg>

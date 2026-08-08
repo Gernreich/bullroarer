@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="495mm"
+   height="279mm"
+   viewBox="0 0 495 279"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       style="vector-effect:non-scaling-stroke;fill:none;stroke:#000000;stroke-width:0.264583;-inkscape-stroke:hairline"
+       id="path7"
+       d="m 61.010822,132.39176 a 3.2838688,14.863826 0 0 1 -2.843913,-7.43192 3.2838688,14.863826 0 0 1 0,-14.86382 3.2838688,14.863826 0 0 1 2.843913,-7.43191" />
+    <path
+       style="vector-effect:non-scaling-stroke;fill:none;stroke:#000000;stroke-width:0.264583;-inkscape-stroke:hairline"
+       d="m 61.01082,102.66411 c 105.45394,-7.593283 201.00733,14.86382 201.00733,14.86382"
+       id="path8" />
+    <path
+       style="vector-effect:non-scaling-stroke;fill:none;stroke:#000000;stroke-width:0.264583;-inkscape-stroke:hairline"
+       d="M 61.010822,132.39176 C 166.46476,139.98504 262.01815,117.52794 262.01815,117.52794"
+       id="path8-1" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:none;stroke:#000000;stroke-width:0.0772545;-inkscape-stroke:hairline"
+       id="path9"
+       cx="65.697243"
+       cy="-117.52794"
+       transform="scale(1,-1)"
+       r="3.5" />
+  </g>
+</svg>
