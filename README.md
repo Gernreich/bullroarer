@@ -45,15 +45,20 @@ Measured out of the files, not copied from whatever drew them:
 
 | Profile | Blade | Cord hole |
 |---|---|---|
-| `BullroarerRectangular.svg` | 200.0 × 42.1mm | 7mm, 11mm from the near end |
-| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9mm | 7mm, 8mm from the blunt end |
-| `BullroarerConvexTapered.svg` | 150.5 × 89.3mm | 7mm, 8mm from the round end |
-| `BullroarerConcaveTapered.svg` | 200.3 × 94.6mm | 7mm, 8mm from the round end |
-| `BullroarerSawtooth.svg` | 169.2 × 67.6mm | 7mm, 9mm from the near end |
+| `BullroarerRectangular.svg` | 200.0 × 42.1mm | 7mm, 10.6mm from the near end |
+| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9mm | 7mm, 8.0mm from the blunt end |
+| `BullroarerConvexTapered.svg` | 150.5 × 89.3mm | 7mm, 7.3mm from the round end |
+| `BullroarerConcaveTapered.svg` | 200.3 × 94.6mm | 7mm, 8.5mm from the round end |
+| `BullroarerSawtooth.svg` | 169.2 × 67.6mm | 7mm, 8.8mm from the near end |
 
-Every cord hole sits on the blade's long centreline — off-centre, the blade spins
-unevenly and the roar stutters. Each file is one 495 × 279mm sheet. Every line is a
-cut; there is no engrave layer and nothing to map by colour.
+Every cord hole sits on the blade's long centreline — off-centre, the blade spins unevenly
+and the roar stutters. Each file is cropped to the blade itself, so the sheet **is** the
+outline.
+
+**Colour is the cut order**, and everything is a cut — there is no engrave layer. Run
+**red first** for the cord hole, while the blade is still whole, then **black** for the
+outline, which frees it. Give both an explicit operation; a per-colour job silently skips
+any colour you leave unmapped.
 
 ## Before you cut
 
@@ -61,6 +66,13 @@ cut; there is no engrave layer and nothing to map by colour.
 than the profile does. The blade is the part that fails: ply can delaminate and a knot can
 split out through the cord hole, so run the face grain along the blade. Baltic birch earns
 its place for its void-free core.
+
+**Two or more laminations may be needed for the best sound.** Cut the profile twice or
+three times and glue the copies face to face. A single 3mm blade is light, and the note
+comes from a blade with enough mass to keep spinning against the air rather than being
+pushed about by it. It also puts more material around the cord hole, where a single sheet
+tears out. Line the holes up, and keep the laminate symmetric about the centreline so the
+blade still spins true.
 
 **The cord is not in these files**, and neither is advice on it: the right cord depends
 on your blade's mass and how hard you swing. A swivel between cord and blade stops the

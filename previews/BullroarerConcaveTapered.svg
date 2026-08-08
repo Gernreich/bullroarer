@@ -2,33 +2,34 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="220.34mm"
-   height="114.62mm"
-   viewBox="32.11 86.07 220.34 114.62"
+   width="200.31235mm"
+   height="94.591553mm"
+   viewBox="0 0 200.31235 94.591553"
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
 <!-- DISPLAY ONLY - not a cut file. Presentational changes only: the stroke is
-     thickened and the hairline hint removed, a light ground is painted in, and the view is
-     cropped to the part rather than the whole sheet. Geometry is untouched, and the cut
-     file keeps the sheet position your laser expects, plus its own hairline stroke.
+     thickened, the hairline hint removed, and a light ground painted in, because a
+     hairline on no background is nearly invisible and a black one vanishes on a dark
+     page. The cut-order colours and the geometry are untouched.
      Cut the file in the repository root, not this one. -->
-  <rect x="32.11" y="86.07" width="220.34" height="114.62" fill="#faf7f0"/>
+  <rect x="0" y="0" width="200.31235" height="94.591553" fill="#faf7f0"/>
   <defs
      id="defs1" />
   <g
-     id="layer1">
+     id="layer1"
+     transform="translate(-42.127151,-96.084352)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.80;"
+       style="fill:none;stroke:#000000;stroke-width:1.40;"
        d="m 42.127151,143.38013 c 66.666669,0 207.824179,-106.415501 199.999999,0"
        id="path1" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.80;"
+       style="fill:none;stroke:#000000;stroke-width:1.40;"
        d="m 42.127151,143.38013 c 66.666669,0 207.824179,106.4155 199.999999,0"
        id="path1-2" />
     <circle
-       style="fill:none;stroke:#000000;stroke-width:1.80;"
+       style="fill:none;stroke:#ff0000;stroke-width:1.40;stroke-opacity:1;"
        id="path2"
        cx="233.98412"
        cy="143"

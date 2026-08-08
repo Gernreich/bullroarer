@@ -58,19 +58,30 @@ Measured out of the files themselves, not copied from whatever drew them:
 
 | Profile | Blade | Cord hole | Hole centre |
 |---|---|---|---|
-| `BullroarerRectangular.svg` | 200.0 × 42.1mm | 7mm | 11mm from the near end |
-| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9mm | 7mm | 8mm from the blunt end |
-| `BullroarerConvexTapered.svg` | 150.5 × 89.3mm | 7mm | 8mm from the round end |
-| `BullroarerConcaveTapered.svg` | 200.3 × 94.6mm | 7mm | 8mm from the round end |
-| `BullroarerSawtooth.svg` | 169.2 × 67.6mm | 7mm | 9mm from the near end |
+| `BullroarerRectangular.svg` | 200.0 × 42.1mm | 7mm | 10.6mm from the near end |
+| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9mm | 7mm | 8.0mm from the blunt end |
+| `BullroarerConvexTapered.svg` | 150.5 × 89.3mm | 7mm | 7.3mm from the round end |
+| `BullroarerConcaveTapered.svg` | 200.3 × 94.6mm | 7mm | 8.5mm from the round end |
+| `BullroarerSawtooth.svg` | 169.2 × 67.6mm | 7mm | 8.8mm from the near end |
 
 **Every cord hole sits on the blade's long centreline.** That is not decoration: a hole
 off the centreline makes the blade spin unevenly and the roar stutters.
 
-Each file is one sheet, 495 × 279mm, with the blade positioned on it. Output is
+Each file is cropped to the blade itself, so the sheet **is** the outline. Output is
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
-and cuts at real size. Every line is a cut; there is no engrave layer and nothing to
-map by colour.
+and cuts at real size.
+
+### Colour is the cut order
+
+Everything is a cut; the colour says when. There is no engrave layer.
+
+| | Colour | What | Why then |
+|---|---|---|---|
+| 1 | **red `#ff0000`** | the cord hole | while the blade is still whole |
+| 2 | **black `#000000`** | the outline | frees the blade, so it goes last |
+
+Give both an explicit operation. A per-colour job silently skips any colour you leave
+unmapped — leave red out and you get a blade with nothing to hang it on.
 
 ## Before you cut
 
@@ -80,6 +91,14 @@ the blade is the part that fails. Ply can delaminate and a knot can split out th
 cord hole, so run the face grain along the blade rather than across it. Baltic birch earns
 its place here for its void-free core; a cheaper ply with voids is a weak blade waiting to
 find them.
+
+**Two or more laminations may be needed for the best sound.** Cut the same profile twice
+or three times and glue the copies face to face. A single 3mm blade is light, and a
+bullroarer's note comes from a blade with enough mass to keep spinning against the air
+rather than being pushed about by it — thicker gives a fuller roar and a steadier one.
+It also puts more material around the cord hole, which is where a single sheet tears
+out. Line the holes up when you glue, and keep the laminate symmetric about the
+centreline so the blade still spins true.
 
 **The cord is not in these files.** Neither is any advice on it, because the right cord
 is a function of your blade's mass and how hard you intend to swing. A swivel between
