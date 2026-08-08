@@ -24,7 +24,7 @@ Released under CC0 1.0 — do what you like with them, no attribution needed. Bu
 Click any of these to download the cut file. The pictures are display renderings —
 the cut files draw a hairline on no background at all, which a browser shows almost
 invisibly, so these are thickened and painted onto a light ground and cropped to the
-part. **Each is shown at its own scale**, so the sizes below are the ones that matter,
+part. Green, orange and cyan are darkened in the picture — at full strength they are too pale to read against a light ground. The cut file keeps the exact values. **Each is shown at its own scale**, so the sizes below are the ones that matter,
 not how large the picture looks.
 
 <div class="tw">
