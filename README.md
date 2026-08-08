@@ -5,6 +5,8 @@ spins about its own long axis as it circles and chops the air into a roar. Outpu
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
 and cuts at real size.
 
+**[Read the writeup](https://gernreich.github.io/bullroarer/)**
+
 <table>
 <tr>
 <td align="center"><a href="BullroarerRectangular.svg"><img src="previews/BullroarerRectangular.svg" alt="A plain rectangular bullroarer blade with a single cord hole near one end" width="150"></a></td>
@@ -31,8 +33,6 @@ and cuts at real size.
 *Click one to download its cut file. Each is shown at its own scale, so read the sizes
 rather than the pictures. These are display renderings — the cut files draw a hairline
 on no background, which a browser shows almost invisibly.*
-
-**[Read the writeup](https://gernreich.github.io/bullroarer/)**
 
 Built for **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**, where the
 cutting and the swinging are shown.
