@@ -56,9 +56,13 @@ and the roar stutters. Each file is cropped to the blade itself, so the sheet **
 outline.
 
 **Colour is the cut order**, and everything is a cut — there is no engrave layer. Run
-**red first** for the cord hole, while the blade is still whole, then **black** for the
+**green first** for the cord hole, while the blade is still whole, then **black** for the
 outline, which frees it. Give both an explicit operation; a per-colour job silently skips
 any colour you leave unmapped.
+
+The full sequence is shared by every LaserMadeMusic repository — blue engraves, then
+green → orange → cyan → black, with black always the cut that frees the part. These
+blades need only the first and last of those.
 
 ## Before you cut
 

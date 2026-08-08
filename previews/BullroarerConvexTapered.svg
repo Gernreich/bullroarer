@@ -9,27 +9,29 @@
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-<!-- DISPLAY ONLY - not a cut file. Presentational changes only: the stroke is
-     thickened, the hairline hint removed, and a light ground painted in, because a
-     hairline on no background is nearly invisible and a black one vanishes on a dark
-     page. The cut-order colours and the geometry are untouched.
+<!-- DISPLAY ONLY - not a cut file.
+     The stroke is thickened, a light ground painted in, and the lightest inks
+     darkened: green, cyan and orange sit below the 3:1 graphics minimum against any
+     light background, so the cut order cannot be read from a faithful rendering. Hue
+     and sequence are unchanged. Geometry and sheet position are untouched, and the
+     CUT FILE keeps the exact values your laser keys on.
      Cut the file in the repository root, not this one. -->
-  <rect x="0" y="0" width="150.52635" height="89.323112" fill="#faf7f0"/>
+  <rect x="0.0" y="0.0" width="150.52635" height="89.323112" fill="#faf7f0"/>
   <defs
      id="defs1" />
   <g
      id="layer1"
      transform="translate(-100.93575,-102.59404)">
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.05;"
+       style="fill:none;stroke:#000000;stroke-width:0.301;"
        d="m 100.93575,147.25559 c 98.26949,-59.772378 153.91216,-59.324678 150.36662,0"
        id="path1" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.05;"
+       style="fill:none;stroke:#000000;stroke-width:0.301;"
        d="m 100.93575,147.25559 c 98.26949,59.77238 153.91216,59.32468 150.36662,0"
        id="path1-5" />
     <circle
-       style="fill:none;stroke:#ff0000;stroke-width:1.05;stroke-opacity:1;"
+       style="fill:none;stroke:#0a7a12;stroke-width:0.301;stroke-opacity:1;"
        id="path2"
        cx="244.13591"
        cy="147.25558"

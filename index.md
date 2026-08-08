@@ -73,15 +73,16 @@ and cuts at real size.
 
 ### Colour is the cut order
 
-Everything is a cut; the colour says when. There is no engrave layer.
+**Colour is the cut order, and it is the same in every LaserMadeMusic repository: blue engraves, then green → orange → cyan → black.** Black is always the last cut, the one that frees the part; violet means skip and is never cut. A file uses only the stages it needs. There is no engrave layer here, and only two of
+the four cut stages are used.
 
 | | Colour | What | Why then |
 |---|---|---|---|
-| 1 | **red `#ff0000`** | the cord hole | while the blade is still whole |
+| 1 | **green `#00ff00`** | the cord hole | while the blade is still whole |
 | 2 | **black `#000000`** | the outline | frees the blade, so it goes last |
 
 Give both an explicit operation. A per-colour job silently skips any colour you leave
-unmapped — leave red out and you get a blade with nothing to hang it on.
+unmapped — leave green out and you get a blade with nothing to hang it on.
 
 ## Before you cut
 
