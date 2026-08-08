@@ -57,10 +57,10 @@ cut; there is no engrave layer and nothing to map by colour.
 
 ## Before you cut
 
-**Material and thickness are yours, and they matter more than the profile.** Nothing
-here has been validated against cut stock. The blade is the part that fails — thin ply
-can delaminate, and a knot can split out through the cord hole. Run the grain along the
-blade, not across it.
+**Cut these in 3mm Baltic birch plywood** — what they are built in, and it matters more
+than the profile does. The blade is the part that fails: ply can delaminate and a knot can
+split out through the cord hole, so run the face grain along the blade. Baltic birch earns
+its place for its void-free core.
 
 **The cord is not in these files**, and neither is advice on it: the right cord depends
 on your blade's mass and how hard you swing. A swivel between cord and blade stops the

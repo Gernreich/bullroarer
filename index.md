@@ -74,11 +74,12 @@ map by colour.
 
 ## Before you cut
 
-**Material and thickness are yours to choose, and they matter more than the profile.**
-Nothing here has been validated against cut stock. A bullroarer has to survive being
-whirled hard on a cord, and the blade is the part that fails — thin ply can delaminate
-and a knot can split out through the cord hole. Consider the grain direction: it should
-run along the blade, not across it.
+**Cut these in 3mm Baltic birch plywood** — that is what they are built in. It matters
+more than the profile does: a bullroarer has to survive being whirled hard on a cord, and
+the blade is the part that fails. Ply can delaminate and a knot can split out through the
+cord hole, so run the face grain along the blade rather than across it. Baltic birch earns
+its place here for its void-free core; a cheaper ply with voids is a weak blade waiting to
+find them.
 
 **The cord is not in these files.** Neither is any advice on it, because the right cord
 is a function of your blade's mass and how hard you intend to swing. A swivel between
