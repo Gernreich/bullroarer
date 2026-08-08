@@ -78,8 +78,21 @@ blade still spins true.
 on your blade's mass and how hard you swing. A swivel between cord and blade stops the
 cord twisting up as the blade spins.
 
-**It needs space.** On a long cord this sweeps a circle several metres across at head
-height, and it is loud on purpose.
+## Handle it with care
+
+**A bullroarer is a weight on the end of a string, and it behaves like one** — and the
+lamination advice above deliberately makes it heavier.
+
+- **Mass.** The plain rectangular blade is about **17g** at one 3mm thickness, **34g**
+  laminated twice, **52g** three times. The larger profiles are heavier again.
+- **Speed.** On a metre of cord at two or three turns a second it is moving on the order
+  of **10–20 m/s**, at the end of a line you cannot stop quickly.
+- **Shape.** Three profiles come to a point and the sawtooth has teeth down both edges. A
+  spinning edge does not have to be sharp to cut.
+
+Swing it **outdoors, in a clear circle several metres across, with nobody inside it**.
+Check the cord and knot every session — the cord hole is where a blade fails, and it fails
+at full speed. Eye protection while you learn how far it reaches. It is loud on purpose.
 
 ## Files
 

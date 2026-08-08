@@ -104,8 +104,29 @@ centreline so the blade still spins true.
 is a function of your blade's mass and how hard you intend to swing. A swivel between
 cord and blade is worth considering: without one the cord twists up as the blade spins.
 
-**This is not a toy and it needs space.** A bullroarer on a long cord sweeps a circle
-several metres across at head height, and it is loud on purpose.
+## Handle it with care
+
+**A bullroarer is a weight on the end of a string, and it behaves like one.** Mass, speed
+and shape all work against you here, and the lamination advice above makes the first of
+them worse — that is the trade you are making for a better sound.
+
+**Mass.** The plain rectangular blade is about **17g** in a single 3mm thickness, **34g**
+laminated twice and **52g** three times (Baltic birch at roughly 680 kg/m³). The larger
+profiles are heavier again. That is a small stone, and it is travelling.
+
+**Speed.** On a metre of cord at two or three turns a second, the blade is moving on the
+order of **10 to 20 metres per second** — cyclist's pace, at the end of a line you cannot
+stop quickly. The cord stores that energy and gives it all back if the blade catches
+something.
+
+**Shape.** Three of the five profiles come to a point, and the sawtooth has a row of
+teeth down both long edges. A spinning edge does not need to be sharp to cut, and these
+are not blunt.
+
+So: **swing it outdoors, in a clear circle several metres across, with nobody inside that
+circle.** Check the cord and the knot before every session — the cord hole is where a
+blade fails, and it fails at full speed. Wear eye protection while you are learning how
+far it actually reaches. It is loud on purpose, so mind ears as well as heads.
 
 ## Files
 
