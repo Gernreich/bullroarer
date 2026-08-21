@@ -19,6 +19,9 @@ closed cut with one 7mm cord hole.
 Released under CC0 1.0 — do what you like with them, no attribution needed. Built for
 **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**.
 
+**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+generator and tool, indexed.
+
 ## The five profiles
 
 Click any of these to download the cut file. The pictures are display renderings —
