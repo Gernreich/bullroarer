@@ -1,0 +1,30 @@
+name: Pre-cut gate
+
+# The cut files are the deliverable, so they are checked the way a build repository
+# checks its nets: geometry measured, not drawing read. flat-part-check.py lives in
+# lasermade-tools because every repository here uses it, so the run needs both
+# checkouts. It exits non-zero on any failure, which turns the run red.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cut-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: Gernreich/lasermade-tools
+          path: .tools
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check every cut file
+        run: python3 .tools/flat-part-check.py --dir .

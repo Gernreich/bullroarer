@@ -101,6 +101,34 @@ Swing it **outdoors, in a clear circle several metres across, with nobody inside
 Check the cord and knot every session — the cord hole is where a blade fails, and it fails
 at full speed. Eye protection while you learn how far it reaches. It is loud on purpose.
 
+## Checking the files
+
+These are gated by **`flat-part-check.py`** in
+[lasermade-tools](https://github.com/Gernreich/lasermade-tools), which measures the
+geometry rather than reading the drawing — millimetre-true units, bed fit, closed cuts,
+the palette and its cut order, and the material left around every hole:
+
+```sh
+python3 ../lasermade-tools/flat-part-check.py --dir .
+```
+
+All five profiles pass: **45 checks, 0 failed**. `.github/workflows/check.yml` runs the
+same command on every push, so a profile cannot be edited into something uncuttable
+without the run going red.
+
+The number to watch is **edge distance**, the material between the cord hole and the
+nearest edge, because that is where a blade fails:
+
+| profile | edge distance |
+|---|---|
+| Rectangular | 7.08mm |
+| Sawtooth | 5.29mm |
+| Convex tapered | **3.67mm** |
+
+Kerf is not modelled — the beam takes its width from both sides of the drawn line, so the
+convex tapered blade's 3.67mm cuts closer to 3.6mm of standing material. It is the
+thinnest of the five, and the one to laminate rather than cut single.
+
 ## Files
 
 | | |
@@ -108,5 +136,6 @@ at full speed. Eye protection while you learn how far it reaches. It is loud on 
 | `Bullroarer*.svg` | the five cut-ready profiles |
 | `previews/` | display renderings — **not** cut files |
 | `index.md` · `index.html` | the published page; the markdown is the source |
+| `.github/workflows/check.yml` | runs the pre-cut gate on every push |
 
 Released under [CC0 1.0](LICENSE).

@@ -1,0 +1,4 @@
+# Named in prose; it lives in ../lasermade-tools and is checked out by CI, never
+# kept here.
+
+flat-part-check.py
