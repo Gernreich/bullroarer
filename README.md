@@ -1,5 +1,14 @@
 # Bullroarer
 
+> **This is a dangerous object. It can injure you, and it can injure anyone
+> near you.** A bullroarer is a weight on the end of a string and behaves like
+> one: 17g in a single 3mm thickness and 52g laminated three times, travelling
+> on the order of 10 to 20 metres per second at the end of a line you cannot
+> stop quickly. Three of these five profiles come to a point and the sawtooth
+> carries teeth down both long edges. Swing it outdoors, in a clear circle
+> several metres across, with nobody inside that circle — and read
+> [Handle it with care](#handle-it-with-care) before you swing it at all.
+
 Five cut-ready blade profiles for a bullroarer — a flat blade whirled on a cord, which
 spins about its own long axis as it circles and chops the air into a roar. Output is
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
