@@ -2,7 +2,7 @@
 
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
-> one: 17g in a single 3mm thickness and 52g laminated three times, travelling
+> one: 17g in a single 3mm thickness and 51g laminated three times, travelling
 > on the order of 10 to 20 metres per second at the end of a line you cannot
 > stop quickly. Three of these five profiles come to a point and the sawtooth
 > carries teeth down both long edges. Swing it outdoors, in a clear circle
@@ -124,7 +124,7 @@ and shape all work against you here, and the lamination advice above makes the f
 them worse — that is the trade you are making for a better sound.
 
 **Mass.** The plain rectangular blade is about **17g** in a single 3mm thickness, **34g**
-laminated twice and **52g** three times (Baltic birch at roughly 680 kg/m³). The larger
+laminated twice and **51g** three times (Baltic birch at roughly 680 kg/m³). The larger
 profiles are heavier again. That is a small stone, and it is travelling.
 
 **Speed.** On a metre of cord at two or three turns a second, the blade is moving on the
