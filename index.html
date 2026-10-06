@@ -36,6 +36,9 @@ h3{font-size:1.02rem;font-weight:650;margin:1.7em 0 .45em}
 p{margin:.85em 0}
 ul,ol{margin:.85em 0;padding-left:1.35em}
 li{margin:.3em 0}
+/* A list with blank lines between its items is "loose", and pandoc wraps each item
+   in a <p> as GitHub does. These pages were set tight before pandoc, so they stay so. */
+li>p{margin:0}
 hr{border:0;border-top:1px solid var(--line);margin:2.6em 0}
 figure{margin:1.6em 0}
 /* A paragraph holding two or more images is a gallery. Left to inline layout they
@@ -95,11 +98,17 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <main>
 <h1 id="bullroarer--five-blade-profiles">Bullroarer — five blade profiles</h1>
 <p><strong><a href="https://github.com/Gernreich/bullroarer">Read the README</a></strong></p>
-<blockquote><p><strong>This is a dangerous object. It can injure you, and it can injure anyone near you.</strong> A bullroarer is a weight on the end of a string and behaves like one: 17g in a single 3mm thickness and 51g laminated three times, travelling on the order of 10 to 20 metres per second at the end of a line you cannot stop quickly. Three of these five profiles come to a point and the sawtooth carries teeth down both long edges. Swing it outdoors, in a clear circle several metres across, with nobody inside that circle — and read <a href="#handle-it-with-care">Handle it with care</a> before you swing it at all.</p></blockquote>
+<blockquote>
+<p><strong>This is a dangerous object. It can injure you, and it can injure anyone near you.</strong> A bullroarer is a weight on the end of a string and behaves like one: 17g in a single 3mm thickness and 51g laminated three times, travelling on the order of 10 to 20 metres per second at the end of a line you cannot stop quickly. Three of these five profiles come to a point and the sawtooth carries teeth down both long edges. Swing it outdoors, in a clear circle several metres across, with nobody inside that circle — and read <a href="#handle-it-with-care">Handle it with care</a> before you swing it at all.</p>
+</blockquote>
 <p>A bullroarer is a flat blade on a cord. Whirled overhead, it spins about its own long axis while it circles, and the alternating faces chop the air into a pulsing roar. The pitch follows how fast you swing it; the shape of the blade decides how readily it spins and how much of the sound is roar rather than whistle.</p>
 <p>Five profiles, all cut-ready. They differ only in outline — every one is a single closed cut with one 7mm cord hole.</p>
 <h2 id="get-the-files">Get the files</h2>
-<ul><li><strong><a href="https://github.com/Gernreich/bullroarer/archive/refs/heads/main.zip">Everything as a ZIP</a></strong> — all five profiles.</li><li><strong><a href="https://github.com/Gernreich/bullroarer">Repository</a></strong> — if you want to change a profile or read the geometry.</li><li>Or click any picture below to download that one cut file.</li></ul>
+<ul>
+<li><strong><a href="https://github.com/Gernreich/bullroarer/archive/refs/heads/main.zip">Everything as a ZIP</a></strong> — all five profiles.</li>
+<li><strong><a href="https://github.com/Gernreich/bullroarer">Repository</a></strong> — if you want to change a profile or read the geometry.</li>
+<li>Or click any picture below to download that one cut file.</li>
+</ul>
 <p>Released under CC0 1.0 — do what you like with them, no attribution needed. Built for <strong><a href="https://www.youtube.com/@LaserMadeMusic">LaserMadeMusic</a></strong>.</p>
 <p><strong><a href="https://gernreich.github.io/">The rest of the build files</a></strong> — every instrument, generator and tool, indexed.</p>
 <h2 id="the-five-profiles">The five profiles</h2>
@@ -128,14 +137,83 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 </tr>
 </table>
 </div>
+
 <h2 id="what-the-files-contain">What the files contain</h2>
 <p>Measured out of the files themselves, not copied from whatever drew them:</p>
-<div class='tw'><table><thead><tr><th>Profile</th><th>Blade</th><th>Cord hole</th><th>Hole centre</th></tr></thead><tbody><tr><td><code>BullroarerRectangular.svg</code></td><td>200.0 × 42.1mm</td><td>7mm</td><td>10.6mm from the near end</td></tr><tr><td><code>BullroarerConvexNarrowTapered.svg</code></td><td>204.3 × 32.9mm</td><td>7mm</td><td>8.0mm from the blunt end</td></tr><tr><td><code>BullroarerConvexTapered.svg</code></td><td>150.5 × 89.3mm</td><td>7mm</td><td>7.3mm from the round end</td></tr><tr><td><code>BullroarerConcaveTapered.svg</code></td><td>200.3 × 94.6mm</td><td>7mm</td><td>8.5mm from the round end</td></tr><tr><td><code>BullroarerSawtooth.svg</code></td><td>169.2 × 67.6mm</td><td>7mm</td><td>8.8mm from the near end</td></tr></tbody></table></div>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Blade</th>
+<th>Cord hole</th>
+<th>Hole centre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BullroarerRectangular.svg</code></td>
+<td>200.0 × 42.1mm</td>
+<td>7mm</td>
+<td>10.6mm from the near end</td>
+</tr>
+<tr>
+<td><code>BullroarerConvexNarrowTapered.svg</code></td>
+<td>204.3 × 32.9mm</td>
+<td>7mm</td>
+<td>8.0mm from the blunt end</td>
+</tr>
+<tr>
+<td><code>BullroarerConvexTapered.svg</code></td>
+<td>150.5 × 89.3mm</td>
+<td>7mm</td>
+<td>7.3mm from the round end</td>
+</tr>
+<tr>
+<td><code>BullroarerConcaveTapered.svg</code></td>
+<td>200.3 × 94.6mm</td>
+<td>7mm</td>
+<td>8.5mm from the round end</td>
+</tr>
+<tr>
+<td><code>BullroarerSawtooth.svg</code></td>
+<td>169.2 × 67.6mm</td>
+<td>7mm</td>
+<td>8.8mm from the near end</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><strong>Every cord hole sits on the blade's long centreline.</strong> That is not decoration: a hole off the centreline makes the blade spin unevenly and the roar stutters.</p>
 <p>Each file is cropped to the blade itself, so the sheet <strong>is</strong> the outline. Output is millimetre-true — <code>1 user unit = 1 mm</code> with a physical <code>width</code>/<code>height</code> — so it prints and cuts at real size.</p>
 <h3 id="colour-is-the-cut-order">Colour is the cut order</h3>
 <p><strong>Colour is the cut order, and it is the same in every LaserMadeMusic repository: blue engraves, then green → orange → cyan → black.</strong> Black is always the last cut, the one that frees the part; violet means skip and is never cut. A file uses only the stages it needs. There is no engrave layer here, and only two of the four cut stages are used.</p>
-<div class='tw'><table><thead><tr><th></th><th>Colour</th><th>What</th><th>Why then</th></tr></thead><tbody><tr><td>1</td><td><strong>green <code>#00ff00</code></strong></td><td>the cord hole</td><td>while the blade is still whole</td></tr><tr><td>2</td><td><strong>black <code>#000000</code></strong></td><td>the outline</td><td>frees the blade, so it goes last</td></tr></tbody></table></div>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Colour</th>
+<th>What</th>
+<th>Why then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>green <code>#00ff00</code></strong></td>
+<td>the cord hole</td>
+<td>while the blade is still whole</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>black <code>#000000</code></strong></td>
+<td>the outline</td>
+<td>frees the blade, so it goes last</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Give both an explicit operation. A per-colour job silently skips any colour you leave unmapped — leave green out and you get a blade with nothing to hang it on.</p>
 <h2 id="before-you-cut">Before you cut</h2>
 <p><strong>Cut these in 3mm Baltic birch plywood</strong> — that is what they are built in. It matters more than the profile does: a bullroarer has to survive being whirled hard on a cord, and the blade is the part that fails. Ply can delaminate and a knot can split out through the cord hole, so run the face grain along the blade rather than across it. Baltic birch earns its place here for its void-free core; a cheaper ply with voids is a weak blade waiting to find them.</p>
@@ -148,7 +226,24 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <p><strong>Shape.</strong> Three of the five profiles come to a point, and the sawtooth has a row of teeth down both long edges. A spinning edge does not need to be sharp to cut, and these are not blunt.</p>
 <p>So: <strong>swing it outdoors, in a clear circle several metres across, with nobody inside that circle.</strong> Check the cord and the knot before every session — the cord hole is where a blade fails, and it fails at full speed. Wear eye protection while you are learning how far it actually reaches. It is loud on purpose, so mind ears as well as heads.</p>
 <h2 id="files">Files</h2>
-<div class='tw'><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><code>Bullroarer*.svg</code></td><td>the five cut-ready profiles</td></tr><tr><td><code>previews/</code></td><td>display renderings — <strong>not</strong> cut files</td></tr><tr><td><code>index.md</code> · <code>index.html</code></td><td>this page; the markdown is the source</td></tr></tbody></table></div>
+<div class="tw">
+<table>
+<tbody>
+<tr>
+<td><code>Bullroarer*.svg</code></td>
+<td>the five cut-ready profiles</td>
+</tr>
+<tr>
+<td><code>previews/</code></td>
+<td>display renderings — <strong>not</strong> cut files</td>
+</tr>
+<tr>
+<td><code>index.md</code> · <code>index.html</code></td>
+<td>this page; the markdown is the source</td>
+</tr>
+</tbody>
+</table>
+</div>
 </main>
 </div>
 <script>
