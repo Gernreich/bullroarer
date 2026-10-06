@@ -1,5 +1,7 @@
 # Bullroarer
 
+**[Read the writeup](https://gernreich.github.io/bullroarer/)**
+
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
 > one: 17g in a single 3mm thickness and 51g laminated three times, travelling
@@ -13,8 +15,6 @@ Five cut-ready blade profiles for a bullroarer — a flat blade whirled on a cor
 spins about its own long axis as it circles and chops the air into a roar. Output is
 millimetre-true — `1 user unit = 1 mm` with a physical `width`/`height` — so it prints
 and cuts at real size.
-
-**[Read the writeup](https://gernreich.github.io/bullroarer/)**
 
 <table>
 <tr>

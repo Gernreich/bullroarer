@@ -1,5 +1,7 @@
 # Bullroarer — five blade profiles
 
+**[Read the README](https://github.com/Gernreich/bullroarer)**
+
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
 > one: 17g in a single 3mm thickness and 51g laminated three times, travelling
