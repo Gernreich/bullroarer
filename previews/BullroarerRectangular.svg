@@ -16,7 +16,7 @@
      and sequence are unchanged. Geometry and sheet position are untouched, and the
      CUT FILE keeps the exact values your laser keys on.
      Cut the file in the repository root, not this one. -->
-  <rect x="0.0" y="0.0" width="200.0" height="42.127151" fill="#faf7f0"/>
+  <rect x="0.0" y="0.0" width="200.0" height="42.127151" fill="#ffffff"/>
   <defs
      id="defs1" />
   <g
