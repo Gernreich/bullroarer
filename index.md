@@ -21,6 +21,11 @@ readily it spins and how much of the sound is roar rather than whistle.
 Five profiles, all cut-ready. They differ only in outline — every one is a single
 closed cut with one 7mm cord hole.
 
+**One of them is cut.** The convex tapered blade, cut twice and glued face to face — two
+laminations, 6mm thick:
+
+<p align="center"><img src="photos/bullroarer-convex-tapered-laminated-x2_web.jpg" alt="The convex tapered bullroarer blade as built, two laminations glued face to face, lying on concrete: a pale birch teardrop pointed at the top and round at the bottom, with the cord hole near the round end" width="360"></p>
+
 ## Get the files
 
 - **[Everything as a ZIP](https://github.com/Gernreich/bullroarer/archive/refs/heads/main.zip)**
@@ -151,6 +156,7 @@ far it actually reaches. It is loud on purpose, so mind ears as well as heads.
 |---|---|
 | `Bullroarer*.svg` | the five cut-ready profiles |
 | `previews/` | display renderings — **not** cut files |
+| `photos/` | the build so far, photographed |
 | `bullroarer-3d.html` | the 3D view, assembled from the cut files — drag to turn |
 | `viewer.py` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools |
 | `.repro` | how every shipped drawing and page is reproduced |

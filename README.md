@@ -45,6 +45,11 @@ and cuts at real size.
 rather than the pictures. These are display renderings — the cut files draw a hairline
 on no background, which a browser shows almost invisibly.*
 
+**One of them is cut.** The convex tapered blade, cut twice and glued face to face — two
+laminations, 6mm thick:
+
+<p align="center"><img src="photos/bullroarer-convex-tapered-laminated-x2_web.jpg" alt="The convex tapered bullroarer blade as built, two laminations glued face to face, lying on concrete: a pale birch teardrop pointed at the top and round at the bottom, with the cord hole near the round end" width="360"></p>
+
 Built for **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**, where the
 cutting and the swinging are shown.
 
@@ -147,6 +152,7 @@ thinnest of the five, and the one to laminate rather than cut single.
 |---|---|
 | `Bullroarer*.svg` | the five cut-ready profiles |
 | `previews/` | display renderings — **not** cut files |
+| `photos/` | the build so far, photographed |
 | `bullroarer-3d.html` | the 3D view, assembled from the cut files — drag to turn |
 | `viewer.py` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools |
 | `.repro` | how every shipped drawing and page is reproduced |
