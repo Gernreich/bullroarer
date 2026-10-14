@@ -1,0 +1,24 @@
+# How every shipped SVG and page in this repository is drawn. Checked by
+# lasermade-tools/repro-svg.py; $OUT is where the file must be written.
+#
+# The 3D viewer is built from the cut files by viewer.py, which imports
+# turn3d.py from lasermade-tools, so it expects that checkout beside this one.
+
+# --- the cut files: no command in this repository redraws them. They are
+# the source the previews and the viewer are built from. ---
+BullroarerConcaveTapered.svg :: !
+BullroarerConvexNarrowTapered.svg :: !
+BullroarerConvexTapered.svg :: !
+BullroarerRectangular.svg :: !
+BullroarerSawtooth.svg :: !
+
+# --- the previews: display renderings of the cut files ---
+previews/BullroarerConcaveTapered.svg :: python3 ../lasermade-tools/make-preview.py BullroarerConcaveTapered.svg $OUT
+previews/BullroarerConvexNarrowTapered.svg :: python3 ../lasermade-tools/make-preview.py BullroarerConvexNarrowTapered.svg $OUT
+previews/BullroarerConvexTapered.svg :: python3 ../lasermade-tools/make-preview.py BullroarerConvexTapered.svg $OUT
+previews/BullroarerRectangular.svg :: python3 ../lasermade-tools/make-preview.py BullroarerRectangular.svg $OUT
+previews/BullroarerSawtooth.svg :: python3 ../lasermade-tools/make-preview.py BullroarerSawtooth.svg $OUT
+
+# --- the pages ---
+index.html :: python3 ../lasermade-tools/md2html.py index.md $OUT
+bullroarer-3d.html :: python3 viewer.py --out=$OUT

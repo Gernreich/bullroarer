@@ -2,6 +2,8 @@
 
 **[Read the README](https://github.com/Gernreich/bullroarer)**
 
+**[Turn it in 3D](https://gernreich.github.io/bullroarer/bullroarer-3d.html)**
+
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
 > one: 17g in a single 3mm thickness and 51g laminated three times, travelling
@@ -149,4 +151,7 @@ far it actually reaches. It is loud on purpose, so mind ears as well as heads.
 |---|---|
 | `Bullroarer*.svg` | the five cut-ready profiles |
 | `previews/` | display renderings — **not** cut files |
+| `bullroarer-3d.html` | the 3D view, assembled from the cut files — drag to turn |
+| `viewer.py` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools |
+| `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | this page; the markdown is the source |
