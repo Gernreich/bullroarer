@@ -47,7 +47,9 @@ def main(argv):
     o = [a.split('=', 1)[1] for a in argv if a.startswith('--out=')]
     path = o[0] if o else os.path.join(HERE, 'bullroarer-3d.html')
     t.write(path, 'Bullroarer', build(),
-            'Drag to turn, scroll or pinch to zoom; pick a blade above. Each is its cut file’s own '
+            'Drag to turn; right-drag, shift-drag or move two fingers to slide the view; '
+            'scroll or pinch to zoom in on whatever is under the pointer; double-click a part '
+            'to turn round it, and Reset view to go back. Pick a blade above. Each is its cut file’s own '
             'outline at 3mm with the cord tied through its hole. Whirled on the cord, a blade spins about '
             'its own long axis, and that spin is what roars: tick Spin it to see which way.',
             'bullroarer/viewer.py', spin=True)
