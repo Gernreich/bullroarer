@@ -1,5 +1,7 @@
 # Bullroarer — five blade profiles
 
+**[← All projects](https://gernreich.github.io/)**
+
 **[Read the README](https://github.com/Gernreich/bullroarer)**
 
 **[Turn it in 3D](https://gernreich.github.io/bullroarer/bullroarer-3d.html)**
@@ -37,7 +39,7 @@ laminations, 6mm thick:
 Released under CC0 1.0 — do what you like with them, no attribution needed. Built for
 **[LaserMadeMusic](https://www.youtube.com/@LaserMadeMusic)**.
 
-**[The rest of the build files](https://gernreich.github.io/)** — every instrument,
+**[The rest of the build files](https://gernreich.github.io/lasermademusic.html)** — every instrument,
 generator and tool, indexed.
 
 ## The five profiles
