@@ -6,7 +6,7 @@
 
 **[Turn it in 3D](https://gernreich.github.io/bullroarer/bullroarer-3d.html)**
 
-<iframe src="bullroarer-3d.html" title="The bullroarer blades as solid parts you can drag to turn, each its cut file's own outline with the cord tied through its hole, with a button for each blade and a box to spin it" style="width:100%;height:560px;border:0"></iframe>
+<iframe src="bullroarer-3d.html?embed" title="The bullroarer blades as solid parts you can drag to turn, each its cut file's own outline with the cord tied through its hole, with a button for each blade and a box to spin it" style="width:100%;height:560px;border:0"></iframe>
 
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
