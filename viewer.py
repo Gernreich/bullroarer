@@ -3,7 +3,7 @@
 
     python3 viewer.py [--out=bullroarer-3d.html]
 
-Each blade is its cut file's own outline at 3mm, read by
+Each blade is its cut file's own outline at 3 mm, read by
 lasermade-tools/turn3d.py, with its cord tied through the one hole. A
 bullroarer is whirled round on that cord, and as it goes it spins about its own
 long axis -- that spin is what roars -- so "Spin it" turns the blade about the
@@ -50,7 +50,7 @@ def main(argv):
             'Drag to turn; right-drag, shift-drag or move two fingers to slide the view; '
             'scroll or pinch to zoom in on whatever is under the pointer; double-click a part '
             'to turn round it, and Reset view to go back. Pick a blade above. Each is its cut file’s own '
-            'outline at 3mm with the cord tied through its hole. Whirled on the cord, a blade spins about '
+            'outline at 3 mm with the cord tied through its hole. Whirled on the cord, a blade spins about '
             'its own long axis, and that spin is what roars: tick Spin it to see which way.',
             'bullroarer/viewer.py', spin=True)
     print(f'  wrote {os.path.relpath(path)}')

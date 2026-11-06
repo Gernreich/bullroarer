@@ -8,7 +8,7 @@
 
 > **This is a dangerous object. It can injure you, and it can injure anyone
 > near you.** A bullroarer is a weight on the end of a string and behaves like
-> one: 17g in a single 3mm thickness and 51g laminated three times, travelling
+> one: 17g in a single 3 mm thickness and 51g laminated three times, travelling
 > on the order of 10 to 20 metres per second at the end of a line you cannot
 > stop quickly. Three of these five profiles come to a point and the sawtooth
 > carries teeth down both long edges. Swing it outdoors, in a clear circle
@@ -27,9 +27,9 @@ and cuts at real size.
 <td align="center"><a href="BullroarerConvexTapered.svg"><img src="previews/BullroarerConvexTapered.svg" alt="A broad teardrop bullroarer blade" width="150"></a></td>
 </tr>
 <tr>
-<td align="center"><sub>Rectangular · 200 × 42mm</sub></td>
-<td align="center"><sub>Convex narrow tapered · 204 × 33mm</sub></td>
-<td align="center"><sub>Convex tapered · 151 × 89mm</sub></td>
+<td align="center"><sub>Rectangular · 200 × 42 mm</sub></td>
+<td align="center"><sub>Convex narrow tapered · 204 × 33 mm</sub></td>
+<td align="center"><sub>Convex tapered · 151 × 89 mm</sub></td>
 </tr>
 <tr>
 <td align="center"><a href="BullroarerConcaveTapered.svg"><img src="previews/BullroarerConcaveTapered.svg" alt="A bullroarer blade with concave swept edges drawing to a long point" width="150"></a></td>
@@ -37,8 +37,8 @@ and cuts at real size.
 <td></td>
 </tr>
 <tr>
-<td align="center"><sub>Concave tapered · 200 × 95mm</sub></td>
-<td align="center"><sub>Sawtooth · 169 × 68mm</sub></td>
+<td align="center"><sub>Concave tapered · 200 × 95 mm</sub></td>
+<td align="center"><sub>Sawtooth · 169 × 68 mm</sub></td>
 <td></td>
 </tr>
 </table>
@@ -48,7 +48,7 @@ rather than the pictures. These are display renderings — the cut files draw a 
 on no background, which a browser shows almost invisibly.*
 
 **One of them is cut.** The convex tapered blade, cut twice and glued face to face — two
-laminations, 6mm thick:
+laminations, 6 mm thick:
 
 <p align="center"><img src="photos/bullroarer-convex-tapered-laminated-x2_web.jpg" alt="The convex tapered bullroarer blade as built, two laminations glued face to face, lying on concrete: a pale birch teardrop pointed at the top and round at the bottom, with the cord hole near the round end" width="360"></p>
 
@@ -66,11 +66,11 @@ Measured out of the files, not copied from whatever drew them:
 
 | Profile | Blade | Cord hole |
 |---|---|---|
-| `BullroarerRectangular.svg` | 200.0 × 42.1mm | 7mm, 10.6mm from the near end |
-| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9mm | 7mm, 8.0mm from the blunt end |
-| `BullroarerConvexTapered.svg` | 150.5 × 89.3mm | 7mm, 7.3mm from the round end |
-| `BullroarerConcaveTapered.svg` | 200.3 × 94.6mm | 7mm, 8.5mm from the round end |
-| `BullroarerSawtooth.svg` | 169.2 × 67.6mm | 7mm, 8.8mm from the near end |
+| `BullroarerRectangular.svg` | 200.0 × 42.1 mm | 7 mm, 10.6 mm from the near end |
+| `BullroarerConvexNarrowTapered.svg` | 204.3 × 32.9 mm | 7 mm, 8.0 mm from the blunt end |
+| `BullroarerConvexTapered.svg` | 150.5 × 89.3 mm | 7 mm, 7.3 mm from the round end |
+| `BullroarerConcaveTapered.svg` | 200.3 × 94.6 mm | 7 mm, 8.5 mm from the round end |
+| `BullroarerSawtooth.svg` | 169.2 × 67.6 mm | 7 mm, 8.8 mm from the near end |
 
 Every cord hole sits on the blade's long centreline — off-centre, the blade spins unevenly
 and the roar stutters. Each file is cropped to the blade itself, so the sheet **is** the
@@ -88,13 +88,13 @@ black.
 
 ## Before you cut
 
-**Cut these in 3mm Baltic birch plywood** — what they are built in, and it matters more
+**Cut these in 3 mm Baltic birch plywood** — what they are built in, and it matters more
 than the profile does. The blade is the part that fails: ply can delaminate and a knot can
 split out through the cord hole, so run the face grain along the blade. Baltic birch earns
 its place for its void-free core.
 
 **Two or more laminations may be needed for the best sound.** Cut the profile twice or
-three times and glue the copies face to face. A single 3mm blade is light, and the note
+three times and glue the copies face to face. A single 3 mm blade is light, and the note
 comes from a blade with enough mass to keep spinning against the air rather than being
 pushed about by it. It also puts more material around the cord hole, where a single sheet
 tears out. Line the holes up, and keep the laminate symmetric about the centreline so the
@@ -109,7 +109,7 @@ cord twisting up as the blade spins.
 **A bullroarer is a weight on the end of a string, and it behaves like one** — and the
 lamination advice above deliberately makes it heavier.
 
-- **Mass.** The plain rectangular blade is about **17g** at one 3mm thickness, **34g**
+- **Mass.** The plain rectangular blade is about **17g** at one 3 mm thickness, **34g**
   laminated twice, **51g** three times. The larger profiles are heavier again.
 - **Speed.** On a metre of cord at two or three turns a second it is moving on the order
   of **10–20 m/s**, at the end of a line you cannot stop quickly.
@@ -140,12 +140,12 @@ nearest edge, because that is where a blade fails:
 
 | profile | edge distance |
 |---|---|
-| Rectangular | 7.08mm |
-| Sawtooth | 5.29mm |
-| Convex tapered | **3.67mm** |
+| Rectangular | 7.08 mm |
+| Sawtooth | 5.29 mm |
+| Convex tapered | **3.67 mm** |
 
 Kerf is not modelled — the beam takes its width from both sides of the drawn line, so the
-convex tapered blade's 3.67mm cuts closer to 3.6mm of standing material. It is the
+convex tapered blade's 3.67 mm cuts closer to 3.6 mm of standing material. It is the
 thinnest of the five, and the one to laminate rather than cut single.
 
 ## Files
