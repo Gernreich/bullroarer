@@ -122,13 +122,13 @@ at full speed. Eye protection while you learn how far it reaches. It is loud on 
 
 ## Checking the files
 
-These are gated by **`flat-part-check.py`** in
+These are gated by **`flat-part-check`** in
 [lasermade-tools](https://github.com/Gernreich/lasermade-tools), which measures the
 geometry rather than reading the drawing — millimetre-true units, bed fit, closed cuts,
 the palette and its cut order, and the material left around every hole:
 
 ```sh
-python3 ../lasermade-tools/flat-part-check.py --dir .
+../lasermade-tools/target/release/flat-part-check --dir .
 ```
 
 All five profiles pass: **45 checks, 0 failed**. `.github/workflows/check.yml` runs the

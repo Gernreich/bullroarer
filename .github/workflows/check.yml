@@ -1,7 +1,7 @@
 name: Pre-cut gate
 
 # The cut files are the deliverable, so they are checked the way a build repository
-# checks its nets: geometry measured, not drawing read. flat-part-check.py lives in
+# checks its nets: geometry measured, not drawing read. flat-part-check lives in
 # lasermade-tools because every repository here uses it, so the run needs both
 # checkouts. It exits non-zero on any failure, which turns the run red.
 
@@ -23,8 +23,8 @@ jobs:
         with:
           repository: Gernreich/lasermade-tools
           path: .tools
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+      # flat-part-check is Rust since 2026-11-07; the runner image has cargo
+      - name: Build the gate
+        run: cargo build --release --locked --bin flat-part-check --manifest-path .tools/Cargo.toml
       - name: Check every cut file
-        run: python3 .tools/flat-part-check.py --dir .
+        run: .tools/target/release/flat-part-check --dir .
