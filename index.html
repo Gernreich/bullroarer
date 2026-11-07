@@ -258,8 +258,12 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <td>the 3D view, assembled from the cut files — drag to turn</td>
 </tr>
 <tr>
-<td><code>viewer.py</code></td>
-<td>builds <code>bullroarer-3d.html</code> from the cut files, with the turn3d module in lasermade-tools</td>
+<td><code>viewer.rs</code></td>
+<td>builds <code>bullroarer-3d.html</code> from the cut files, with the turn3d module in lasermade-tools: <code>cargo build --release</code>, then <code>target/release/viewer</code></td>
+</tr>
+<tr>
+<td><code>Cargo.toml</code> · <code>Cargo.lock</code></td>
+<td>the Rust package for <code>viewer.rs</code>; it expects the lasermade-tools checkout beside this one</td>
 </tr>
 <tr>
 <td><code>.repro</code></td>

@@ -1,8 +1,9 @@
 # How every shipped SVG and page in this repository is drawn. Checked by
 # lasermade-tools' repro-svg; $OUT is where the file must be written.
 #
-# The 3D viewer is built from the cut files by viewer.py, which imports
-# turn3d.py from lasermade-tools, so it expects that checkout beside this one.
+# The 3D viewer is built from the cut files by viewer.rs (Rust; repro-svg
+# builds it), which reads them with lasermade-tools' turn3d module, so it
+# expects that checkout beside this one.
 
 # --- the cut files: no command in this repository redraws them. They are
 # the source the previews and the viewer are built from. ---
@@ -21,4 +22,4 @@ previews/BullroarerSawtooth.svg :: ../lasermade-tools/target/release/make-previe
 
 # --- the pages ---
 index.html :: ../lasermade-tools/target/release/md2html index.md $OUT
-bullroarer-3d.html :: python3 viewer.py --out=$OUT
+bullroarer-3d.html :: target/release/viewer --out=$OUT

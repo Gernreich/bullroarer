@@ -1,0 +1,18 @@
+[package]
+name = "bullroarer"
+version = "0.1.0"
+edition = "2021"
+authors = ["Michael Gernreich", "Claude (Anthropic) <noreply@anthropic.com>"]
+description = "The five bullroarer blades in 3D, from their cut files"
+license-file = "LICENSE"
+publish = false
+autobins = false
+
+# The 3D page's builder. It reads the cut files with lasermade-tools' turn3d
+# module, so it expects that checkout beside this one.
+[[bin]]
+name = "viewer"
+path = "viewer.rs"
+
+[dependencies]
+lasermade-tools = { path = "../lasermade-tools" }

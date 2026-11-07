@@ -156,7 +156,8 @@ thinnest of the five, and the one to laminate rather than cut single.
 | `previews/` | display renderings — **not** cut files |
 | `photos/` | the build so far, photographed |
 | `bullroarer-3d.html` | the 3D view, assembled from the cut files — drag to turn |
-| `viewer.py` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools |
+| `viewer.rs` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools: `cargo build --release`, then `target/release/viewer` |
+| `Cargo.toml` · `Cargo.lock` | the Rust package for `viewer.rs`; it expects the lasermade-tools checkout beside this one |
 | `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | the published page; the markdown is the source |
 | `.github/workflows/check.yml` | runs the pre-cut gate on every push |
