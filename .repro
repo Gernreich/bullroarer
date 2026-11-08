@@ -1,17 +1,19 @@
 # How every shipped SVG and page in this repository is drawn. Checked by
 # lasermade-tools' repro-svg; $OUT is where the file must be written.
 #
-# The 3D viewer is built from the cut files by viewer.rs (Rust; repro-svg
+# The cut files and the SolidCraft designs are drawn by bullroarer.rs; the
+# 3D viewer is built from the cut files by viewer.rs (Rust; repro-svg
 # builds it), which reads them with lasermade-tools' turn3d module, so it
 # expects that checkout beside this one.
 
-# --- the cut files: no command in this repository redraws them. They are
-# the source the previews and the viewer are built from. ---
-BullroarerConcaveTapered.svg :: !
-BullroarerConvexNarrowTapered.svg :: !
-BullroarerConvexTapered.svg :: !
-BullroarerRectangular.svg :: !
-BullroarerSawtooth.svg :: !
+# --- the cut files, drawn by bullroarer.rs from each blade's parameters (by
+# hand in Inkscape until 2026-11-08). The previews and the viewer are built
+# from them. ---
+BullroarerConcaveTapered.svg :: target/release/bullroarer --blade=concave-tapered --out=$(dirname $OUT)
+BullroarerConvexNarrowTapered.svg :: target/release/bullroarer --blade=convex-narrow-tapered --out=$(dirname $OUT)
+BullroarerConvexTapered.svg :: target/release/bullroarer --blade=convex-tapered --out=$(dirname $OUT)
+BullroarerRectangular.svg :: target/release/bullroarer --blade=rectangular --out=$(dirname $OUT)
+BullroarerSawtooth.svg :: target/release/bullroarer --blade=sawtooth --out=$(dirname $OUT)
 
 # --- the previews: display renderings of the cut files ---
 previews/BullroarerConcaveTapered.svg :: ../lasermade-tools/target/release/make-preview BullroarerConcaveTapered.svg $OUT
@@ -24,10 +26,24 @@ previews/BullroarerSawtooth.svg :: ../lasermade-tools/target/release/make-previe
 index.html :: ../lasermade-tools/target/release/md2html index.md $OUT
 bullroarer-3d.html :: target/release/viewer --out=$OUT
 
-# --- the STEP files: the 3D view's parts as solids for a CAD program, one
-# file per design, written from the page by lasermade-tools' step-export ---
-step/bullroarer-rectangular.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
-step/bullroarer-convex-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
-step/bullroarer-convex-narrow-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
-step/bullroarer-concave-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
-step/bullroarer-sawtooth.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
+# --- the SolidCraft designs: each blade as a parametric solid, written by
+# bullroarer.rs, and saved by SolidCraft with the build cache left out
+# (lasermade-tools' sc-slim) so the file is the same every time ---
+solidcraft/bullroarer-rectangular.solidcraft.json :: target/release/bullroarer --blade=rectangular --no-write --solidcraft=$(dirname $OUT)
+solidcraft/bullroarer-convex-tapered.solidcraft.json :: target/release/bullroarer --blade=convex-tapered --no-write --solidcraft=$(dirname $OUT)
+solidcraft/bullroarer-concave-tapered.solidcraft.json :: target/release/bullroarer --blade=concave-tapered --no-write --solidcraft=$(dirname $OUT)
+solidcraft/bullroarer-convex-narrow-tapered.solidcraft.json :: target/release/bullroarer --blade=convex-narrow-tapered --no-write --solidcraft=$(dirname $OUT)
+solidcraft/bullroarer-sawtooth.solidcraft.json :: target/release/bullroarer --blade=sawtooth --no-write --solidcraft=$(dirname $OUT)
+solidcraft/bullroarer-rectangular.sc :: target/release/bullroarer --blade=rectangular --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-rectangular.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+solidcraft/bullroarer-convex-tapered.sc :: target/release/bullroarer --blade=convex-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-convex-tapered.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+solidcraft/bullroarer-concave-tapered.sc :: target/release/bullroarer --blade=concave-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-concave-tapered.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+solidcraft/bullroarer-convex-narrow-tapered.sc :: target/release/bullroarer --blade=convex-narrow-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-convex-narrow-tapered.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+solidcraft/bullroarer-sawtooth.sc :: target/release/bullroarer --blade=sawtooth --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-sawtooth.solidcraft.json --save $OUT --quiet && ../lasermade-tools/target/release/sc-slim $OUT
+
+# --- the STEP files, written by SolidCraft (solidcraft-cli, on PATH) from
+# those designs (by step-export from the 3D view until 2026-11-08) ---
+step/bullroarer-rectangular.step :: target/release/bullroarer --blade=rectangular --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-rectangular.solidcraft.json --out $OUT --quiet
+step/bullroarer-convex-tapered.step :: target/release/bullroarer --blade=convex-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-convex-tapered.solidcraft.json --out $OUT --quiet
+step/bullroarer-concave-tapered.step :: target/release/bullroarer --blade=concave-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-concave-tapered.solidcraft.json --out $OUT --quiet
+step/bullroarer-convex-narrow-tapered.step :: target/release/bullroarer --blade=convex-narrow-tapered --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-convex-narrow-tapered.solidcraft.json --out $OUT --quiet
+step/bullroarer-sawtooth.step :: target/release/bullroarer --blade=sawtooth --no-write --solidcraft=$(dirname $OUT) && solidcraft-cli run $(dirname $OUT)/bullroarer-sawtooth.solidcraft.json --out $OUT --quiet

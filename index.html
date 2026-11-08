@@ -99,7 +99,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <body>
 <button class="tog" type="button">theme</button>
 <div class="wrap">
-<nav><b>Contents</b><a class="l1" href="#bullroarer--five-blade-profiles">Bullroarer — five blade profiles</a><a class="l2" href="#get-the-files">Get the files</a><a class="l2" href="#the-five-profiles">The five profiles</a><a class="l2" href="#what-the-files-contain">What the files contain</a><a class="l2" href="#before-you-cut">Before you cut</a><a class="l2" href="#handle-it-with-care">Handle it with care</a><a class="l2" href="#files">Files</a><a class="l2" href="#credits">Credits</a></nav>
+<nav><b>Contents</b><a class="l1" href="#bullroarer--five-blade-profiles">Bullroarer — five blade profiles</a><a class="l2" href="#get-the-files">Get the files</a><a class="l2" href="#the-five-profiles">The five profiles</a><a class="l2" href="#what-the-files-contain">What the files contain</a><a class="l2" href="#before-you-cut">Before you cut</a><a class="l2" href="#handle-it-with-care">Handle it with care</a><a class="l2" href="#files">Files</a><a class="l2" href="#changing-it">Changing it</a><a class="l2" href="#solidcraft-designs-and-step-files">SolidCraft designs and STEP files</a><a class="l2" href="#credits">Credits</a></nav>
 <main>
 <h1 id="bullroarer--five-blade-profiles">Bullroarer — five blade profiles</h1>
 <p><strong><a href="https://gernreich.github.io/" target="_blank" rel="noopener">← All projects</a></strong></p>
@@ -151,7 +151,7 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 </div>
 
 <h2 id="what-the-files-contain">What the files contain</h2>
-<p>Measured out of the files themselves, not copied from whatever drew them:</p>
+<p>Drawn by <code>bullroarer.rs</code> from each blade's parameters (by hand in Inkscape until 2026-11-08; the defaults are the drawn blades):</p>
 <div class="tw">
 <table>
 <thead>
@@ -258,12 +258,20 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 <td>the 3D view, assembled from the cut files — drag to turn</td>
 </tr>
 <tr>
+<td><code>bullroarer.rs</code></td>
+<td>draws the five cut files and writes the SolidCraft designs from each blade's parameters (Changing it, below)</td>
+</tr>
+<tr>
+<td><code>solidcraft/</code> · <code>step/</code></td>
+<td>the SolidCraft designs and the STEP files built from them</td>
+</tr>
+<tr>
 <td><code>viewer.rs</code></td>
 <td>builds <code>bullroarer-3d.html</code> from the cut files, with the turn3d module in lasermade-tools: <code>cargo build --release</code>, then <code>target/release/viewer</code></td>
 </tr>
 <tr>
 <td><code>Cargo.toml</code> · <code>Cargo.lock</code></td>
-<td>the Rust package for <code>viewer.rs</code>; it expects the lasermade-tools checkout beside this one</td>
+<td>the Rust package for <code>bullroarer.rs</code> and <code>viewer.rs</code>; it expects the lasermade-tools checkout beside this one</td>
 </tr>
 <tr>
 <td><code>.repro</code></td>
@@ -276,6 +284,298 @@ pre,.tw{break-inside:avoid}h1{break-after:avoid}}
 </tbody>
 </table>
 </div>
+<h2 id="changing-it">Changing it</h2>
+<p>Every blade is a few numbers, and each is a flag on <code>bullroarer.rs</code> (with <code>--blade=NAME</code>, since each blade has its own; a dash for each underscore) and a parameter of the same name in that blade's SolidCraft design:</p>
+<pre><code>cargo build --release
+target/release/bullroarer --blade=sawtooth --teeth=24 --depth=14</code></pre>
+<p>Without <code>--blade</code> it redraws all five at their defaults. Each run prints the blade's size, its mass a lamination and the ply round the cord hole, and a validation block: the hole on the centreline, at least 3 mm of ply round it, the outline a blade, and the bed. <code>--out=DIR</code> writes elsewhere; <code>--no-write</code> only checks.</p>
+<p>The curved blades are cubic Béziers, as they were drawn. A Bézier blade's <code>width</code> is exact: the control points' heights are scaled so the curve's widest point is <code>width</code>, the ratio between the two heights fixed as drawn, and their places along the blade are fractions of its length. The defaults are the drawn blades, to a ten-thousandth of a millimetre.</p>
+<p><strong>rectangular</strong></p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply: one lamination</td>
+</tr>
+<tr>
+<td><code>laminations</code></td>
+<td>1</td>
+<td>blades glued face to face: the design's thickness is laminations × ply</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>200 mm</td>
+<td>the blade, end to end</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>42.127 mm</td>
+<td>the blade, across</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>7 mm</td>
+<td>the cord hole</td>
+</tr>
+<tr>
+<td><code>hole_inset</code></td>
+<td>10.5833 mm</td>
+<td>the cord hole's centre from the near end</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>convex-tapered</strong></p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply: one lamination</td>
+</tr>
+<tr>
+<td><code>laminations</code></td>
+<td>1</td>
+<td>blades glued face to face: the design's thickness is laminations × ply</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>150.3666 mm</td>
+<td>point to round end, along the centreline</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>89.3231 mm</td>
+<td>the blade at its widest</td>
+</tr>
+<tr>
+<td><code>c1_x</code></td>
+<td>0.6535</td>
+<td>the first control point, along: a fraction of the length</td>
+</tr>
+<tr>
+<td><code>c2_x</code></td>
+<td>1.0236</td>
+<td>the second control point, along: past 1 rounds the end</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>7 mm</td>
+<td>the cord hole</td>
+</tr>
+<tr>
+<td><code>hole_inset</code></td>
+<td>7.1665 mm</td>
+<td>the cord hole's centre from the round end</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>concave-tapered</strong></p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply: one lamination</td>
+</tr>
+<tr>
+<td><code>laminations</code></td>
+<td>1</td>
+<td>blades glued face to face: the design's thickness is laminations × ply</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>200 mm</td>
+<td>point to round end, along the centreline</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>94.5916 mm</td>
+<td>the blade at its widest</td>
+</tr>
+<tr>
+<td><code>c1_x</code></td>
+<td>0.3333</td>
+<td>the first control point, along: a fraction of the length</td>
+</tr>
+<tr>
+<td><code>c2_x</code></td>
+<td>1.0391</td>
+<td>the second control point, along: past 1 rounds the end</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>7 mm</td>
+<td>the cord hole</td>
+</tr>
+<tr>
+<td><code>hole_inset</code></td>
+<td>8.143 mm</td>
+<td>the cord hole's centre from the round end</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>convex-narrow-tapered</strong></p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply: one lamination</td>
+</tr>
+<tr>
+<td><code>laminations</code></td>
+<td>1</td>
+<td>blades glued face to face: the design's thickness is laminations × ply</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>204.2912 mm</td>
+<td>blunt end to point</td>
+</tr>
+<tr>
+<td><code>end_w</code></td>
+<td>29.7277 mm</td>
+<td>the blunt end, across: where the Béziers start</td>
+</tr>
+<tr>
+<td><code>cap</code></td>
+<td>3.2839 mm</td>
+<td>the blunt end's half-ellipse, deep</td>
+</tr>
+<tr>
+<td><code>belly_x</code></td>
+<td>0.5246</td>
+<td>the control point, along the curve's run: a fraction</td>
+</tr>
+<tr>
+<td><code>belly</code></td>
+<td>7.5933 mm</td>
+<td>the control point, out beyond the blunt end's width</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>7 mm</td>
+<td>the cord hole</td>
+</tr>
+<tr>
+<td><code>hole_inset</code></td>
+<td>7.9702 mm</td>
+<td>the cord hole's centre from the blunt end</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>sawtooth</strong></p>
+<div class="tw">
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>default</th>
+<th>what it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ply</code></td>
+<td>3 mm</td>
+<td>the ply: one lamination</td>
+</tr>
+<tr>
+<td><code>laminations</code></td>
+<td>1</td>
+<td>blades glued face to face: the design's thickness is laminations × ply</td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>169.2231 mm</td>
+<td>the blade, end to end</td>
+</tr>
+<tr>
+<td><code>teeth</code></td>
+<td>30</td>
+<td>teeth down each edge</td>
+</tr>
+<tr>
+<td><code>core</code></td>
+<td>34.4578 mm</td>
+<td>the blade between the teeth's roots</td>
+</tr>
+<tr>
+<td><code>depth</code></td>
+<td>16.5922 mm</td>
+<td>a tooth, root to tip</td>
+</tr>
+<tr>
+<td><code>lean</code></td>
+<td>0.4485</td>
+<td>a tooth's tip along its pitch, from the end it starts at</td>
+</tr>
+<tr>
+<td><code>hole_d</code></td>
+<td>7 mm</td>
+<td>the cord hole</td>
+</tr>
+<tr>
+<td><code>hole_inset</code></td>
+<td>8.7918 mm</td>
+<td>the cord hole's centre from the near end</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="solidcraft-designs-and-step-files">SolidCraft designs and STEP files</h2>
+<p><code>solidcraft/bullroarer-NAME.solidcraft.json</code> is each blade as a parametric SolidCraft design, written by</p>
+<pre><code>target/release/bullroarer --no-write --solidcraft=solidcraft</code></pre>
+<p>and SolidCraft builds each design file and STEP file from it:</p>
+<pre><code>cd solidcraft
+solidcraft-cli run bullroarer-sawtooth.solidcraft.json --save bullroarer-sawtooth.sc --out ../step/bullroarer-sawtooth.step --quiet
+../../lasermade-tools/target/release/sc-slim bullroarer-sawtooth.sc</code></pre>
+<p>Each is one body, <code>laminations</code> × <code>ply</code> thick: the two or three blades glued face to face that <a href="#before-you-cut">Before you cut</a> recommends are one part here. The curves are drawn from their formulas, so they follow every parameter, and the sawtooth's teeth are a pattern counted by its <code>teeth</code> parameter. Built, each blade's volume matches the generator's to within 3e-5 (SolidCraft fits the curves to 0.001 mm), and with four to six parameters of each blade moved at once, the design builds what the generator draws at those values. <code>.repro</code> checks all fifteen files. The STEP files used to be written from the 3D view by <code>step-export</code>; since 2026-11-08 SolidCraft builds them.</p>
+<p>The files:</p>
+<ul>
+<li><code>solidcraft/bullroarer-rectangular.solidcraft.json</code> · <code>solidcraft/bullroarer-rectangular.sc</code> · <code>step/bullroarer-rectangular.step</code></li>
+<li><code>solidcraft/bullroarer-convex-tapered.solidcraft.json</code> · <code>solidcraft/bullroarer-convex-tapered.sc</code> · <code>step/bullroarer-convex-tapered.step</code></li>
+<li><code>solidcraft/bullroarer-concave-tapered.solidcraft.json</code> · <code>solidcraft/bullroarer-concave-tapered.sc</code> · <code>step/bullroarer-concave-tapered.step</code></li>
+<li><code>solidcraft/bullroarer-convex-narrow-tapered.solidcraft.json</code> · <code>solidcraft/bullroarer-convex-narrow-tapered.sc</code> · <code>step/bullroarer-convex-narrow-tapered.step</code></li>
+<li><code>solidcraft/bullroarer-sawtooth.solidcraft.json</code> · <code>solidcraft/bullroarer-sawtooth.sc</code> · <code>step/bullroarer-sawtooth.step</code></li>
+</ul>
 <h2 id="credits">Credits</h2>
 <p>Made by Michael Gernreich with <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude</a> (Anthropic), working in Claude Code, which co-wrote the code and the documentation. Commits Claude made carry a <code>Co-Authored-By: Claude</code> line.</p>
 </main>

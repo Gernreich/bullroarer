@@ -1,0 +1,15 @@
+{"commands":[
+{"command":"parameters.add","params":{"name":"ply","expression":"3 mm","comment":"the ply: one lamination"}},
+{"command":"parameters.add","params":{"name":"laminations","expression":"1","unit":"","comment":"blades glued face to face: the design's thickness is laminations × ply"}},
+{"command":"parameters.add","params":{"name":"length","expression":"200 mm","comment":"the blade, end to end"}},
+{"command":"parameters.add","params":{"name":"width","expression":"42.127 mm","comment":"the blade, across"}},
+{"command":"parameters.add","params":{"name":"hole_d","expression":"7 mm","comment":"the cord hole"}},
+{"command":"parameters.add","params":{"name":"hole_inset","expression":"10.5833 mm","comment":"the cord hole's centre from the near end"}},
+{"command":"parameters.add","params":{"name":"thick","expression":"laminations*ply","comment":"read only: the blade's thickness"}},
+{"command":"sketch.create","params":{"plane":"XY","name":"bullroarer rectangular sketch"}},
+{"command":"sketch.rectangle.two_point","params":{"p0":["0 mm","-width/2"],"p1":["length","width/2"]}},
+{"command":"sketch.circle.center","params":{"center":["length - hole_inset","0 mm"],"diameter":"hole_d"}},
+{"command":"sketch.finish","params":{}},
+{"command":"solid.extrude","params":{"sketch":"bullroarer rectangular sketch","distance":"thick","operation":"new","name":"bullroarer rectangular","body_name":"bullroarer rectangular"}},
+{"command":"inspect.measure","params":{}}
+]}

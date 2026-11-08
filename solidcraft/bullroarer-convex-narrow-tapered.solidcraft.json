@@ -1,0 +1,20 @@
+{"commands":[
+{"command":"parameters.add","params":{"name":"ply","expression":"3 mm","comment":"the ply: one lamination"}},
+{"command":"parameters.add","params":{"name":"laminations","expression":"1","unit":"","comment":"blades glued face to face: the design's thickness is laminations × ply"}},
+{"command":"parameters.add","params":{"name":"length","expression":"204.2912 mm","comment":"blunt end to point"}},
+{"command":"parameters.add","params":{"name":"end_w","expression":"29.7277 mm","comment":"the blunt end, across: where the Béziers start"}},
+{"command":"parameters.add","params":{"name":"cap","expression":"3.2839 mm","comment":"the blunt end's half-ellipse, deep"}},
+{"command":"parameters.add","params":{"name":"belly_x","expression":"0.5246","unit":"","comment":"the control point, along the curve's run: a fraction"}},
+{"command":"parameters.add","params":{"name":"belly","expression":"7.5933 mm","comment":"the control point, out beyond the blunt end's width"}},
+{"command":"parameters.add","params":{"name":"hole_d","expression":"7 mm","comment":"the cord hole"}},
+{"command":"parameters.add","params":{"name":"hole_inset","expression":"7.9702 mm","comment":"the cord hole's centre from the blunt end"}},
+{"command":"parameters.add","params":{"name":"thick","expression":"laminations*ply","comment":"read only: the blade's thickness"}},
+{"command":"sketch.create","params":{"plane":"XY","name":"bullroarer convex narrow tapered sketch"}},
+{"command":"sketch.equation_curve","params":{"x":"(1-t)^3*cap + 3*(1-t)^2*t*(cap + belly_x*(length - cap)) + 3*(1-t)*t^2*length + t^3*length","y":"((1-t)^3*end_w/2 + 3*(1-t)^2*t*(end_w/2 + belly))","start":"0","end":"1","tolerance":0.001}},
+{"command":"sketch.equation_curve","params":{"x":"(1-t)^3*cap + 3*(1-t)^2*t*(cap + belly_x*(length - cap)) + 3*(1-t)*t^2*length + t^3*length","y":"-((1-t)^3*end_w/2 + 3*(1-t)^2*t*(end_w/2 + belly))","start":"0","end":"1","tolerance":0.001}},
+{"command":"sketch.equation_curve","params":{"x":"cap - cap*sin(t)","y":"end_w/2*cos(t)","start":"0","end":"pi","tolerance":0.001}},
+{"command":"sketch.circle.center","params":{"center":["hole_inset","0 mm"],"diameter":"hole_d"}},
+{"command":"sketch.finish","params":{}},
+{"command":"solid.extrude","params":{"sketch":"bullroarer convex narrow tapered sketch","distance":"thick","operation":"new","name":"bullroarer convex narrow tapered","body_name":"bullroarer convex narrow tapered"}},
+{"command":"inspect.measure","params":{}}
+]}

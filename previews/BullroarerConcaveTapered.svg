@@ -1,14 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="200.31235mm"
-   height="94.591553mm"
-   viewBox="0 0 200.31235 94.591553"
-   version="1.1"
-   id="svg1"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200.312mm" height="94.5916mm" viewBox="0 0 200.312 94.5916">
 <!-- DISPLAY ONLY - not a cut file.
      The stroke is thickened, a light ground painted in, and the lightest inks
      darkened: green, cyan and orange sit below the 3:1 graphics minimum against any
@@ -16,25 +7,13 @@
      and sequence are unchanged. Geometry and sheet position are untouched, and the
      CUT FILE keeps the exact values your laser keys on.
      Cut the file in the repository root, not this one. -->
-  <rect x="0.0" y="0.0" width="200.31235" height="94.591553" fill="#ffffff"/>
-  <defs
-     id="defs1" />
-  <g
-     id="layer1"
-     transform="translate(-42.127151,-96.084352)">
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.401;"
-       d="m 42.127151,143.38013 c 66.666669,0 207.824179,-106.415501 199.999999,0"
-       id="path1" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.401;"
-       d="m 42.127151,143.38013 c 66.666669,0 207.824179,106.4155 199.999999,0"
-       id="path1-2" />
-    <circle
-       style="fill:none;stroke:#0a7a12;stroke-width:0.401;stroke-opacity:1;"
-       id="path2"
-       cx="233.98412"
-       cy="143.38013"
-       r="3.5" />
+  <rect x="0.0" y="0.0" width="200.312" height="94.5916" fill="#ffffff"/>
+<title>Bullroarer, concave tapered</title>
+<desc>1 user unit = 1mm. A bullroarer blade, concave tapered, drawn by bullroarer.rs --blade=concave-tapered. Cut it in 3mm Baltic birch, face grain along the blade. Green #00ff00 cuts the cord hole first, then black #000000 frees the blade.</desc>
+  <g fill="none" stroke="#0a7a12" stroke-width="0.401">
+    <circle cx="191.857" cy="47.2958" r="3.5"/>
+  </g>
+  <g fill="none" stroke="#000000" stroke-width="0.401">
+    <path d="M 0,47.2958 C 66.66,47.2958 207.82,-59.1198 200,47.2958 C 207.82,153.7113 66.66,47.2958 0,47.2958 Z"/>
   </g>
 </svg>

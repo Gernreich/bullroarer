@@ -62,7 +62,8 @@ generator and tool, indexed.
 
 ## What is in each file
 
-Measured out of the files, not copied from whatever drew them:
+Drawn by `bullroarer.rs` from each blade's parameters (by hand in Inkscape until
+2026-11-08; the defaults are the drawn blades):
 
 | Profile | Blade | Cord hole |
 |---|---|---|
@@ -156,33 +157,136 @@ thinnest of the five, and the one to laminate rather than cut single.
 | `previews/` | display renderings — **not** cut files |
 | `photos/` | the build so far, photographed |
 | `bullroarer-3d.html` | the 3D view, assembled from the cut files — drag to turn |
+| `bullroarer.rs` | draws the five cut files and writes the SolidCraft designs from each blade's parameters (Changing it, below) |
+| `solidcraft/` · `step/` | the SolidCraft designs and the STEP files built from them |
 | `viewer.rs` | builds `bullroarer-3d.html` from the cut files, with the turn3d module in lasermade-tools: `cargo build --release`, then `target/release/viewer` |
-| `Cargo.toml` · `Cargo.lock` | the Rust package for `viewer.rs`; it expects the lasermade-tools checkout beside this one |
+| `Cargo.toml` · `Cargo.lock` | the Rust package for `bullroarer.rs` and `viewer.rs`; it expects the lasermade-tools checkout beside this one |
 | `.repro` | how every shipped drawing and page is reproduced |
 | `index.md` · `index.html` | the published page; the markdown is the source |
 | `.github/workflows/check.yml` | runs the pre-cut gate on every push |
 
 Released under [CC0 1.0](LICENSE).
 
-## STEP files
+## Changing it
 
-`step/` holds the 3D view as STEP files, one per design, to open or import in a
-CAD program such as SolidCraft, Fusion or FreeCAD: one solid body per part, in
-millimetres, assembled as the view shows it. Every face is flat, so a curve comes
-in as short straight runs; engraving has no depth and is left out. They are written
-from `bullroarer-3d.html` by lasermade-tools' `step-export`, and `.repro` checks them:
+Every blade is a few numbers, and each is a flag on `bullroarer.rs` (with `--blade=NAME`,
+since each blade has its own; a dash for each underscore) and a parameter of the same
+name in that blade's SolidCraft design:
 
 ```
-../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer
+cargo build --release
+target/release/bullroarer --blade=sawtooth --teeth=24 --depth=14
 ```
+
+Without `--blade` it redraws all five at their defaults. Each run prints the blade's
+size, its mass a lamination and the ply round the cord hole, and a validation block:
+the hole on the centreline, at least 3 mm of ply round it, the outline a blade, and the
+bed. `--out=DIR` writes elsewhere; `--no-write` only checks.
+
+The curved blades are cubic Béziers, as they were drawn. A Bézier blade's `width` is
+exact: the control points' heights are scaled so the curve's widest point is `width`,
+the ratio between the two heights fixed as drawn, and their places along the blade are
+fractions of its length. The defaults are the drawn blades, to a ten-thousandth of a
+millimetre.
+
+**rectangular**
+
+| parameter | default | what it is |
+|---|---|---|
+| `ply` | 3 mm | the ply: one lamination |
+| `laminations` | 1 | blades glued face to face: the design's thickness is laminations × ply |
+| `length` | 200 mm | the blade, end to end |
+| `width` | 42.127 mm | the blade, across |
+| `hole_d` | 7 mm | the cord hole |
+| `hole_inset` | 10.5833 mm | the cord hole's centre from the near end |
+
+**convex-tapered**
+
+| parameter | default | what it is |
+|---|---|---|
+| `ply` | 3 mm | the ply: one lamination |
+| `laminations` | 1 | blades glued face to face: the design's thickness is laminations × ply |
+| `length` | 150.3666 mm | point to round end, along the centreline |
+| `width` | 89.3231 mm | the blade at its widest |
+| `c1_x` | 0.6535 | the first control point, along: a fraction of the length |
+| `c2_x` | 1.0236 | the second control point, along: past 1 rounds the end |
+| `hole_d` | 7 mm | the cord hole |
+| `hole_inset` | 7.1665 mm | the cord hole's centre from the round end |
+
+**concave-tapered**
+
+| parameter | default | what it is |
+|---|---|---|
+| `ply` | 3 mm | the ply: one lamination |
+| `laminations` | 1 | blades glued face to face: the design's thickness is laminations × ply |
+| `length` | 200 mm | point to round end, along the centreline |
+| `width` | 94.5916 mm | the blade at its widest |
+| `c1_x` | 0.3333 | the first control point, along: a fraction of the length |
+| `c2_x` | 1.0391 | the second control point, along: past 1 rounds the end |
+| `hole_d` | 7 mm | the cord hole |
+| `hole_inset` | 8.143 mm | the cord hole's centre from the round end |
+
+**convex-narrow-tapered**
+
+| parameter | default | what it is |
+|---|---|---|
+| `ply` | 3 mm | the ply: one lamination |
+| `laminations` | 1 | blades glued face to face: the design's thickness is laminations × ply |
+| `length` | 204.2912 mm | blunt end to point |
+| `end_w` | 29.7277 mm | the blunt end, across: where the Béziers start |
+| `cap` | 3.2839 mm | the blunt end's half-ellipse, deep |
+| `belly_x` | 0.5246 | the control point, along the curve's run: a fraction |
+| `belly` | 7.5933 mm | the control point, out beyond the blunt end's width |
+| `hole_d` | 7 mm | the cord hole |
+| `hole_inset` | 7.9702 mm | the cord hole's centre from the blunt end |
+
+**sawtooth**
+
+| parameter | default | what it is |
+|---|---|---|
+| `ply` | 3 mm | the ply: one lamination |
+| `laminations` | 1 | blades glued face to face: the design's thickness is laminations × ply |
+| `length` | 169.2231 mm | the blade, end to end |
+| `teeth` | 30 | teeth down each edge |
+| `core` | 34.4578 mm | the blade between the teeth's roots |
+| `depth` | 16.5922 mm | a tooth, root to tip |
+| `lean` | 0.4485 | a tooth's tip along its pitch, from the end it starts at |
+| `hole_d` | 7 mm | the cord hole |
+| `hole_inset` | 8.7918 mm | the cord hole's centre from the near end |
+
+## SolidCraft designs and STEP files
+
+`solidcraft/bullroarer-NAME.solidcraft.json` is each blade as a parametric SolidCraft
+design, written by
+
+```
+target/release/bullroarer --no-write --solidcraft=solidcraft
+```
+
+and SolidCraft builds each design file and STEP file from it:
+
+```
+cd solidcraft
+solidcraft-cli run bullroarer-sawtooth.solidcraft.json --save bullroarer-sawtooth.sc --out ../step/bullroarer-sawtooth.step --quiet
+../../lasermade-tools/target/release/sc-slim bullroarer-sawtooth.sc
+```
+
+Each is one body, `laminations` × `ply` thick: the two or three blades glued face to
+face that [Before you cut](#before-you-cut) recommends are one part here. The curves are drawn from their
+formulas, so they follow every parameter, and the sawtooth's teeth are a pattern
+counted by its `teeth` parameter. Built, each blade's volume matches the generator's to
+within 3e-5 (SolidCraft fits the curves to 0.001 mm), and with four to six parameters
+of each blade moved at once, the design builds what the generator draws at those
+values. `.repro` checks all fifteen files. The STEP files used to be written from the
+3D view by `step-export`; since 2026-11-08 SolidCraft builds them.
 
 The files:
 
-- `step/bullroarer-concave-tapered.step`
-- `step/bullroarer-convex-narrow-tapered.step`
-- `step/bullroarer-convex-tapered.step`
-- `step/bullroarer-rectangular.step`
-- `step/bullroarer-sawtooth.step`
+- `solidcraft/bullroarer-rectangular.solidcraft.json` · `solidcraft/bullroarer-rectangular.sc` · `step/bullroarer-rectangular.step`
+- `solidcraft/bullroarer-convex-tapered.solidcraft.json` · `solidcraft/bullroarer-convex-tapered.sc` · `step/bullroarer-convex-tapered.step`
+- `solidcraft/bullroarer-concave-tapered.solidcraft.json` · `solidcraft/bullroarer-concave-tapered.sc` · `step/bullroarer-concave-tapered.step`
+- `solidcraft/bullroarer-convex-narrow-tapered.solidcraft.json` · `solidcraft/bullroarer-convex-narrow-tapered.sc` · `step/bullroarer-convex-narrow-tapered.step`
+- `solidcraft/bullroarer-sawtooth.solidcraft.json` · `solidcraft/bullroarer-sawtooth.sc` · `step/bullroarer-sawtooth.step`
 
 ## Credits
 

@@ -1,0 +1,18 @@
+{"commands":[
+{"command":"parameters.add","params":{"name":"ply","expression":"3 mm","comment":"the ply: one lamination"}},
+{"command":"parameters.add","params":{"name":"laminations","expression":"1","unit":"","comment":"blades glued face to face: the design's thickness is laminations × ply"}},
+{"command":"parameters.add","params":{"name":"length","expression":"200 mm","comment":"point to round end, along the centreline"}},
+{"command":"parameters.add","params":{"name":"width","expression":"94.5916 mm","comment":"the blade at its widest"}},
+{"command":"parameters.add","params":{"name":"c1_x","expression":"0.3333","unit":"","comment":"the first control point, along: a fraction of the length"}},
+{"command":"parameters.add","params":{"name":"c2_x","expression":"1.0391","unit":"","comment":"the second control point, along: past 1 rounds the end"}},
+{"command":"parameters.add","params":{"name":"hole_d","expression":"7 mm","comment":"the cord hole"}},
+{"command":"parameters.add","params":{"name":"hole_inset","expression":"8.143 mm","comment":"the cord hole's centre from the round end"}},
+{"command":"parameters.add","params":{"name":"thick","expression":"laminations*ply","comment":"read only: the blade's thickness"}},
+{"command":"sketch.create","params":{"plane":"XY","name":"bullroarer concave tapered sketch"}},
+{"command":"sketch.equation_curve","params":{"x":"length*(3*(1-t)^2*t*c1_x + 3*(1-t)*t^2*c2_x + t^3)","y":"width/2*(3*(1-t)^2*t*0 + 3*(1-t)*t^2*2.25)","start":"0","end":"1","tolerance":0.001}},
+{"command":"sketch.equation_curve","params":{"x":"length*(3*(1-t)^2*t*c1_x + 3*(1-t)*t^2*c2_x + t^3)","y":"-width/2*(3*(1-t)^2*t*0 + 3*(1-t)*t^2*2.25)","start":"0","end":"1","tolerance":0.001}},
+{"command":"sketch.circle.center","params":{"center":["length - hole_inset","0 mm"],"diameter":"hole_d"}},
+{"command":"sketch.finish","params":{}},
+{"command":"solid.extrude","params":{"sketch":"bullroarer concave tapered sketch","distance":"thick","operation":"new","name":"bullroarer concave tapered","body_name":"bullroarer concave tapered"}},
+{"command":"inspect.measure","params":{}}
+]}
