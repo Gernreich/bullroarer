@@ -164,6 +164,18 @@ thinnest of the five, and the one to laminate rather than cut single.
 
 Released under [CC0 1.0](LICENSE).
 
+## STEP files
+
+`step/` holds the 3D view as STEP files, one per design, to open or import in a
+CAD program such as SolidCraft, Fusion or FreeCAD: one solid body per part, in
+millimetres, assembled as the view shows it. Every face is flat, so a curve comes
+in as short straight runs; engraving has no depth and is left out. They are written
+from `bullroarer-3d.html` by lasermade-tools' `step-export`, and `.repro` checks them:
+
+```
+../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer
+```
+
 ## Credits
 
 Made by Michael Gernreich with [Claude](https://www.anthropic.com/claude) (Anthropic), working in Claude Code, which co-wrote the code and the documentation. Commits Claude made carry a `Co-Authored-By: Claude` line.

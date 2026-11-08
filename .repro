@@ -23,3 +23,11 @@ previews/BullroarerSawtooth.svg :: ../lasermade-tools/target/release/make-previe
 # --- the pages ---
 index.html :: ../lasermade-tools/target/release/md2html index.md $OUT
 bullroarer-3d.html :: target/release/viewer --out=$OUT
+
+# --- the STEP files: the 3D view's parts as solids for a CAD program, one
+# file per design, written from the page by lasermade-tools' step-export ---
+step/bullroarer-rectangular.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
+step/bullroarer-convex-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
+step/bullroarer-convex-narrow-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
+step/bullroarer-concave-tapered.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
+step/bullroarer-sawtooth.step :: ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer --out=$(dirname $OUT)
