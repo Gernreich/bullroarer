@@ -176,6 +176,14 @@ from `bullroarer-3d.html` by lasermade-tools' `step-export`, and `.repro` checks
 ../lasermade-tools/target/release/step-export bullroarer-3d.html --name=bullroarer
 ```
 
+The files:
+
+- `step/bullroarer-concave-tapered.step`
+- `step/bullroarer-convex-narrow-tapered.step`
+- `step/bullroarer-convex-tapered.step`
+- `step/bullroarer-rectangular.step`
+- `step/bullroarer-sawtooth.step`
+
 ## Credits
 
 Made by Michael Gernreich with [Claude](https://www.anthropic.com/claude) (Anthropic), working in Claude Code, which co-wrote the code and the documentation. Commits Claude made carry a `Co-Authored-By: Claude` line.
